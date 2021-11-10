@@ -1,1 +1,5 @@
-cout<<"yay"<<endl;
+#include "LLStrategy.h"
+
+LLStrategy::LLStrategy(){
+
+}
