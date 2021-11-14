@@ -11,7 +11,7 @@ private:
 
 public:
 	FalconHeavyStrategy();
-    void launch();
-    void land();
+    void launch(); //algorithms
+    void land(); //
 };
 #endif

@@ -2,16 +2,16 @@
 #define LLSTRATEGY_H
 
 #include <string>
-#include <iostream>
+#include <iostream> // iostream for all derived classes too
 using namespace std;
 
-class LLStrategy //: public Shirt
+class LLStrategy 
 {
 private:
 
 public:
-	LLStrategy();
-    virtual void launch();
-    virtual void land();
+	LLStrategy(){}; //do we have constructor in abstract class
+    virtual void launch() =0; //pure vitual abstract
+    virtual void land()= 0;
 };
 #endif
