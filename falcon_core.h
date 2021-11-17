@@ -16,15 +16,49 @@ class FalconCore : Thruster
          * 
          */
         FalconCore();
+        /**
+         * @brief Construct a new Falcon Core object
+         * 
+         * @param deleteThrusters
+         * whether the object should delete the thruster
+         */
         FalconCore(bool deleteThrusters);
+        /**
+         * @brief Destroy the Falcon Core object
+         * 
+         */
         ~FalconCore();
 
         void fire();
+        /**
+         * @brief 
+         * 
+         * @param thruster 
+         * @return true 
+         * @return false 
+         * return based on whether the object already exists in the vector (true does not exists)
+         */
         bool addThruster(Thruster* thruster);
+        /**
+         * @brief removes the thruster 
+         * 
+         * @param thruster 
+         * @return true 
+         * @return false 
+         * return is based on if an object was removed (true if found and removed)
+         */
         bool removeThruster(Thruster* thruster);
 
     private:
+        /**
+         * @brief a vector of thrusters for the falcon core
+         * 
+         */
         std::vector<Thruster*> thrusters;
+        /**
+         * @brief whether the object should delete the thrusters or not
+         * 
+         */
         bool deleteThrusters;
 };
 
