@@ -2,23 +2,25 @@
 #define ROCKET_H
 
 #include <iostream>
-//#include "Command.h"
+#include <vector>
+#include "Stage.h"
+#include "LLStrategy.h"
+#include "RState.h"
 using namespace std;
 
 class Rocket {
     private:
-        
+        vector<Stage*> stages;
+        LLStrategy strategy;
+
 
     public:
         Rocket();
-        ~Rocket(); 
-
-       //functions
-        void press();
-
-        
-
-            
+        void launch();
+        void land();
+        RState createRState();
+        void setRState(RState rState);
+        Rocket* clone();
 
 
 };
