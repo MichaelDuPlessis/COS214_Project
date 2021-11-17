@@ -1,11 +1,42 @@
 #include "capsulefactory.h"
 
+
+////////////////////////////////////////////////////////////////////////////////////
 CapsuleFactory::CapsuleFactory()
 {
 
 }
 
-Capsule *CapsuleFactory::buildCapsule()
+////////////////////////////////////////////////////////////////////////////////////////////
+Capsule* CD_CapsuleFactory::buildCapsule() 
 {
-    return new Capsule();
+
 }
+
+CD_CapsuleFactory::CD_CapsuleFactory() 
+{
+    
+}
+
+CD_CapsuleFactory::~CD_CapsuleFactory() 
+{
+    
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+C_CapsuleFactory::C_CapsuleFactory() 
+{
+    
+}
+
+Capsule* C_CapsuleFactory::buildCapsule() 
+{
+    
+}
+
+C_CapsuleFactory::~C_CapsuleFactory() 
+{
+    
+}
+

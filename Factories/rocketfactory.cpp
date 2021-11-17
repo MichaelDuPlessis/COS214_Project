@@ -1,33 +1,16 @@
 #include "rocketfactory.h"
 
-RocketFactory::RocketFactory(StageFactory *sf, CapsuleFactory *cf)
-{
-    StgFact = sf;
-    CpslFact = cf;
+RocketFactory::RocketFactory(StageFactory *sf, CapsuleFactory *cf){
 }
 
-Rocket *RocketFactory::buildFalconHeavy()
-{
-    Stage *s = StgFact->buildStage();
-    Capsule *c = CpslFact->buildCapsule();
+Rocket* RocketFactory::buildFalconHeavy(){
 
-    return new Rocket(s,c);
 }
 
-Rocket *RocketFactory::buildFalcon9()
-{
-    Stage *s = StgFact->buildStage();
-    Capsule *c = CpslFact->buildCapsule();
+Rocket* RocketFactory::buildFalcon9(){
 
-    Rocket *r = new Rocket();
-    r->attachStage(s);
-    r->attachCapsule(c);
-    return r;
 }
 
-RocketFactory::~RocketFactory()
-{
-    delete StgFact;
-    delete CpslFact;
-
+RocketFactory::~RocketFactory(){
+ 
 }

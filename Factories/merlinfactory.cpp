@@ -4,3 +4,8 @@ MerlinFactory::MerlinFactory()
 {
 
 }
+
+Merlin* MerlinFactory::createMerlin() 
+{
+    
+}

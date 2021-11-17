@@ -1,11 +1,18 @@
 #ifndef CAPSULEFACTORY_H
 #define CAPSULEFACTORY_H
 
-#include "capsule.h"
-//this will actually be a abstract factory
+#include <vector>
 
-class CapsuleFactory
-{
+//#include "capsule.h"
+
+using namespace std;
+
+class Capsule; // can delete later
+class Satellite;
+
+class CapsuleFactory{
+private:
+    vector<Satellite> satellites; 
 public:
     CapsuleFactory();
     virtual Capsule* buildCapsule() = 0;
@@ -25,8 +32,7 @@ public:
     ~CD_CapsuleFactory();
 };
 
-class C_CapsuleFactory : public CapsuleFactory
-{
+class C_CapsuleFactory : public CapsuleFactory{
 private:
     /* data */
 public:

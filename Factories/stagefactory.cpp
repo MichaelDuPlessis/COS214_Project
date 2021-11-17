@@ -5,7 +5,20 @@ StageFactory::StageFactory()
 
 }
 
-Stage *StageFactory::buildStage()
+StageFactory::StageFactory(MerlinFactory* m) 
 {
-    return new Stage();
+    merlinFactory = m;
 }
+
+
+Stage* StageFactory::createSmallStage() 
+{
+    
+}
+
+Stage* StageFactory::createLargeStage() 
+{
+    
+}
+
+

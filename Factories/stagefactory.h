@@ -1,13 +1,19 @@
 #ifndef STAGEFACTORY_H
 #define STAGEFACTORY_H
 
-#include "stage.h"
+// #include "stage.h"
+class MerlinFactory;
+class Stage;
 
 class StageFactory
 {
+private:
+    MerlinFactory* merlinFactory ;
 public:
     StageFactory();
-    Stage* buildStage();
+    StageFactory(MerlinFactory* m);
+    Stage* createSmallStage();
+    Stage* createLargeStage();
 
 };
 
