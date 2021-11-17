@@ -18,7 +18,10 @@ Network::~Network()
 		} 
 	}
 }
-
+/**
+	*@return
+	* returns a satellite iterator for the given aggregate
+*/
 Iterator* Network::createIterator()
 {
 	//std::cout<<"In createIterator()\n";

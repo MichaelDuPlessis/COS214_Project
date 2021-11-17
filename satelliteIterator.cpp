@@ -1,5 +1,9 @@
 #include "satelliteIterator.h"
 
+/**
+	*@param e
+	* 	The vector of StarlinkSatellites from an existing aggregate.
+*/
 SatelliteIterator::SatelliteIterator(std::vector<StarlinkSatellite*> e) : Iterator()
 {
 	this->list = e;
