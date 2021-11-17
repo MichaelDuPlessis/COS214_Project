@@ -4,9 +4,17 @@
 #include "thruster.h";
 #include <vector>;
 
+/**
+ * @brief Acts as the composite in the composite design pattern
+ * @class FalconCore
+ */
 class FalconCore : Thruster
 {
     public:
+        /**
+         * @brief Construct a new Falcon Core object
+         * 
+         */
         FalconCore();
         FalconCore(bool deleteThrusters);
         ~FalconCore();
