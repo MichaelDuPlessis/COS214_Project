@@ -1,13 +1,17 @@
 #include "launch.h"
 
 /**
-	*A pointer to an instatiated Rocket must be passed to constructor.
+	*@brief
+	* 		A pointer to an instatiated Rocket must be passed to constructor.
+	*@param r
+	* 			A pointer to an existing rocket.
 */
 Launch::Launch(Rocket* r) : Command(r)
 {}
 
 /**
-	*Call the Rockets launch method.
+	*@brief
+	* 		Call the Rockets launch method.
 */
 void Launch::launch()
 {
@@ -15,6 +19,10 @@ void Launch::launch()
 	r->launch();///launch the rocket
 }
 
+/**
+	*@brief
+	* 		Land the rocket
+*/
 void Launch::land()
 {
 	//STUB METHOD. Class interested in launch only

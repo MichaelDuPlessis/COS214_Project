@@ -1,9 +1,12 @@
 #include "missionControl.h"
 
 /**
- 	*Constructor takes two arguments. First being a launch command,
- 	*second being a land command. Important they are passed in order
- 	* otherwise error messages will be printed to console.
+ 	*@brief
+ 	* 		Constructor takes two arguments to initialise the classes attributes.
+ 	* @param launch
+ 	* 		A launch command,
+ 	*@param land
+ 	* 		 A land command
 */
 MissionControl::MissionControl(Command* launch, Command* land)
 {
@@ -19,11 +22,18 @@ MissionControl::~MissionControl()
 	if(_land != NULL)
 		delete _land;
 }
+/**
+	*@brief
+	*	Calls the commands launch method to launch the Rocket
+*/
 void MissionControl::launch()
 {
 	_launch->launch();
 }
-
+/**
+	*@brief
+	* 	Calls the commands land method to land the Rocket.
+*/
 void MissionControl::land()
 {
 	_land->land();

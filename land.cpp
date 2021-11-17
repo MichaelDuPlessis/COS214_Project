@@ -4,7 +4,8 @@ Land::Land(Rocket* r) : Command(r)
 {}
 
 /**
-	*Call the Rockets land method
+	*@brief
+	* 		Call the Rockets land method
 */
 void Land::land()
 {
@@ -12,6 +13,10 @@ void Land::land()
 	r->land();
 }
 
+/**
+	*@brief
+	* 		Launches the Rocket.
+*/
 void Land::launch()
 {
 	//STUB METHOD HERE. Class interested in land() only
