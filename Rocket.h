@@ -3,14 +3,17 @@
 
 #include <string>
 #include <iostream>
+
+#include "LLStrategy.h"
+
 using namespace std;
 
 class Rocket
 {
 private:
-    LLStrategy* strategy;
+   LLStrategy* strategy;
 public:
-	Rocket();
+    Rocket(LLStrategy*);
     void launch(); //algorithms
     void land(); //
 };

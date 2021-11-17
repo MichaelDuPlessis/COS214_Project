@@ -10,8 +10,8 @@ class FalconHeavyStrategy : public LLStrategy
 private:
 
 public:
-	FalconHeavyStrategy();
-    void launch(); //algorithms
-    void land(); //
+    FalconHeavyStrategy();
+    void launch();
+    void land();
 };
 #endif

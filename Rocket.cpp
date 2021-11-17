@@ -1,12 +1,12 @@
 #include "Rocket.h"
 
-Rocket::Rocket(){
-    
+Rocket::Rocket(LLStrategy* s) {
+    strategy = s;
 }
-void Rocket::launch(){
-  
+void Rocket::launch() {
+    strategy->launch(); //calling concrete strategy launch and land, client chooses which rocket
 }
-void Rocket::land(){
- 
+void Rocket::land() {
+    strategy->land();
 
 }

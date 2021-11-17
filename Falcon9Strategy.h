@@ -10,7 +10,7 @@ class Falcon9Strategy : public LLStrategy
 private:
 
 public:
-	Falcon9Strategy();
+    Falcon9Strategy();
     void launch();
     void land();
 };
