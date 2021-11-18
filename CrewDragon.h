@@ -15,6 +15,7 @@ public:
     ~CrewDragon();
     void printCrew();
     // void printSatellites();
+    void dockToISS();
 };
 
 

@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-class Capsule
+class Capsule // : public aggregate
 {
 private:
 
@@ -15,9 +15,7 @@ public:
     ~Capsule();
     virtual void printCrew() = 0;
     // virtual void printSatellites() = 0;
-    virtual void printCargo() = 0;
-    virtual void addCargo() = 0;
-    virtual void removeCargo(int) = 0;
+    virtual void dockToISS() = 0;
 
 };
 

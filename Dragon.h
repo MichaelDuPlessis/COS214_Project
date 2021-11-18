@@ -8,8 +8,12 @@ class Dragon : public Capsule
 private:
     
 public:
-    Dragon(/* args */);
+    Dragon();
     ~Dragon();
+    void printCrew();
+    void dockToISS();
+
+
 };
 
 #endif

@@ -1,14 +1,14 @@
 #include "CrewDragon.h"
 
 CrewDragon::CrewDragon() {
-
+    crew.push_back(new Crew("John", "Doe")); //add some basic crew
+    crew.push_back(new Crew("John", "Doe"));
 }
 
-CrewDragon::~CrewDragon() {
+CrewDragon::~CrewDragon() {}
 
-}
-
-void CrewDragon::printCrew() {
+void CrewDragon::printCrew() 
+{
     std::vector<Crew *>::iterator it;
 
     for (it = crew.begin(); it != crew.end(); it++)
@@ -21,3 +21,10 @@ void CrewDragon::printCrew() {
     // for (it = satellites.begin(); it != satellites.end(); it++)
     //     std::cout << "Name: "<< (*it)->getName() << "\tSpecialisation: " << (*it)->getSpecialisation() << std::endl;
 // }
+
+void CrewDragon::dockToISS() 
+{
+    std::cout << "Unloading crew and cargo to ISS\n";
+    for (int i=0; i<crew.size(); i++)
+        crew.pop_back();
+}
