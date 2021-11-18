@@ -1,7 +1,7 @@
 #ifndef FALCON_CORE_H
 #define FALCON_CORE_H
 
-#include "thruster.h";
+#include "Thruster.h";
 #include <vector>;
 
 /**

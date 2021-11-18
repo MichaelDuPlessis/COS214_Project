@@ -1,7 +1,7 @@
 #ifndef VACUUM_H
 #define VACUUM_H
 
-#include "thruster.h"
+#include "Thruster.h"
 
 class Vaccuum : Thruster
 {
