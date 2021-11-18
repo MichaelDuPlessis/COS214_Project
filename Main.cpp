@@ -9,9 +9,11 @@ using namespace std;
 
 int main()
 {
-	//create thruster and stage
+	//create thrusters and stage
 	Thruster *thruster1 = new Thruster();
-	Stage *stage1 = new Stage(thruster1);
+	Thruster *thruster2 = new Thruster();
+	Thruster *thruster3 = new Thruster();
+	Stage *stage1 = new Stage();
 
 	//create observers
 	StageObserver *o1 = new StageObserver(stage1);
@@ -19,6 +21,11 @@ int main()
 	StageObserver *o3 = new StageObserver(stage1);
 	StageObserver *o4 = new StageObserver(stage1);
 	StageObserver *o5 = new StageObserver(stage1);
+
+	//add Thrusters
+	stage1->addThruster(thruster1);
+	stage1->addThruster(thruster2);
+	stage1->addThruster(thruster3);
 
 	//attach observers
 	stage1->attach(o1);
@@ -62,6 +69,11 @@ int main()
 	stage1->detach(o5);
 	cout << "\n\n";
 
+	//remove Thrusters
+	stage1->removeThruster(thruster1);
+	stage1->removeThruster(thruster2);
+	stage1->removeThruster(thruster3);
+
 	cout << "Destructing..." << endl;
 
 	//clean up
@@ -73,6 +85,8 @@ int main()
 
 	delete stage1;
 
+	delete thruster3;
+	delete thruster2;
 	delete thruster1;
 
 	return 0;

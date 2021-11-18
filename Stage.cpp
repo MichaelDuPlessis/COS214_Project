@@ -5,9 +5,8 @@
 
 using namespace std;
 
-Stage::Stage(Thruster *t)
+Stage::Stage()
 {
-	this->thruster = t;
 	this->warning = "none";
 	cout << "New Stage Created!" << endl;
 }
@@ -73,4 +72,23 @@ void Stage::notify()
 		(*it)->update();
 		cout << "Observer notified!" << endl;
 	}
+}
+
+void Stage::addThruster(Thruster *t)
+{
+	this->thrusters.push_back(t);
+	cout << "New Thruster added!" << endl;
+}
+
+void Stage::removeThruster(Thruster *t)
+{
+	vector<Thruster *>::iterator it;
+
+	for (it = thrusters.begin(); it < thrusters.end(); it++)
+	{
+		if ((*it) == t)
+			this->thrusters.erase(it--);
+	}
+
+	cout << "Thruster Removed!" << endl;
 }
