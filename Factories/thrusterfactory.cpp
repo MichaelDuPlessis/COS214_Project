@@ -8,13 +8,13 @@ ThrusterFactory::ThrusterFactory()
 
 Thruster* ThrusterFactory::createCoreThruster() 
 {
-    
+    FalconCore* fc = new FalconCore(true);  // this core will delete its engines
 }
 
 
-Thruster* ThrusterFactory::createCVaccumeThruster() 
+Thruster* ThrusterFactory::createVaccumeThruster() 
 {
-    return new Vaccuum(new Merlin());
+    return new Vaccuum(new Merlin(), true); // this vaccum whats attached to it
 }
 
 ThrusterFactory::~ThrusterFactory() 

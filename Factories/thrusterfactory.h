@@ -13,7 +13,7 @@ class ThrusterFactory
 public:
     ThrusterFactory();
     Thruster* createCoreThruster();
-    Thruster* createCVaccumeThruster();
+    Thruster* createVaccumeThruster();
     ~ThrusterFactory();
 };
 
