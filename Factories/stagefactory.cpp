@@ -1,8 +1,9 @@
 #include "stagefactory.h"
 
+
 StageFactory::StageFactory()
 {
-
+    cout << "Created Stage Factory" << endl;
 }
 
 StageFactory::StageFactory(MerlinFactory* m) 
