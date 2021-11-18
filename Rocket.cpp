@@ -15,7 +15,8 @@ void Rocket::setRState(RState rState)
 
 Rocket* Rocket::clone()
 {
-
+    // todo once we have factories to make 
+    // copies of strategy and stage, maybe use clone witht them
 }
 
 Rocket::Rocket(LLStrategy* s) {
@@ -28,5 +29,4 @@ void Rocket::launch() {
 
 void Rocket::land() {
     strategy->land();
-
 }
