@@ -1,7 +1,9 @@
 #ifndef SATELLITEFACTORY_H
 #define SATELLITEFACTORY_H
 
-class Satellite;
+class Satellite{public: Satellite();};
+
+using namespace std;
 
 class SatelliteFactory
 {
