@@ -3,7 +3,11 @@
 
 #include <iostream>
 using namespace std;
-
+/**
+ * @brief State Class
+ * @details This class represents the additional State participant of the Memento pattern
+ * 
+ */
 class State {
     private:
        
