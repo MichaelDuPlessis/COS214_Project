@@ -10,13 +10,11 @@ private:
     std::string specialisation;
     
 public:
-    Crew();
+    Crew(std::string, std::string);
     ~Crew();
     std::string getName();
     std::string getSpecialisation();
-    void setName(std::string);
-    void setSpecialisation(std::string);
-};
 
+};
 
 #endif
