@@ -47,7 +47,12 @@ class Vaccuum : Thruster
          * @brief prints decorator
          * 
          */
-        void print();
+        void fire();
+        /**
+         * @brief prints the decorator
+         * 
+         */
+        void stop();
         /**
          * @brief sets the current thruster
          * 

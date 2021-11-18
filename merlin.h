@@ -14,7 +14,12 @@ class Merlin : Thruster
      * @brief turns the engine on
      * @return void
      */
-        void fire();
+    void fire();
+    /**
+     * @brief turns the engine off
+     * 
+     */
+    void stop();
 };
 
 #endif
