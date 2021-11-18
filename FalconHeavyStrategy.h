@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-#ifndef FALCONHEAVYSTRATEGY_H
-#define FALCONHEAVYSTRATEGY_H
-
-#include <string>
-#include "LLStrategy.h"
-using namespace std;
-
-class FalconHeavyStrategy : public LLStrategy
-{
-private:
-
-public:
-	FalconHeavyStrategy();
-    void launch(); //algorithms
-    void land(); //
-};
-#endif
-=======
 #ifndef FALCONHEAVYSTRATEGY_H
 #define FALCONHEAVYSTRATEGY_H
 
@@ -42,4 +23,3 @@ public:
     void land();
 };
 #endif
->>>>>>> Strategy

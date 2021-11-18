@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-#ifndef LLSTRATEGY_H
-#define LLSTRATEGY_H
-
-#include <string>
-#include <iostream> // iostream for all derived classes too
-using namespace std;
-
-class LLStrategy 
-{
-private:
-
-public:
-	LLStrategy(){}; //do we have constructor in abstract class
-    virtual void launch() =0; //pure vitual abstract
-    virtual void land()= 0;
-};
-=======
 #ifndef LLSTRATEGY_H
 #define LLSTRATEGY_H
 
@@ -41,5 +23,4 @@ public:
     //! pure virtual function will be instatiated in concrete strategies
     virtual void land() = 0; 
 };
->>>>>>> Strategy
 #endif
