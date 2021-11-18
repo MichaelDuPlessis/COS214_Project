@@ -1,28 +1,50 @@
-#ifndef ROCKET_H 
+#ifndef ROCKET_H
 #define ROCKET_H
 
+#include <string>
 #include <iostream>
 #include <vector>
-#include "Stage.h"
+
 #include "LLStrategy.h"
 #include "RState.h"
+#include "Stage.h"
+
+
 using namespace std;
-
-class Rocket {
-    private:
-        vector<Stage*> stages;
-        LLStrategy strategy;
-
-
-    public:
-        Rocket();
-        void launch();
-        void land();
-        RState createRState();
-        void setRState(RState rState);
-        Rocket* clone();
-
-
+/** 
+ *  @brief     Rocket Class
+ *  @details   This class represents the context participant in the strategy hierachy
+ *  @author    Angela
+ *  @date      November 2021
+ */
+class Rocket
+{
+private:
+   LLStrategy* strategy; //!< private member, pointer to a strategy
+   vector<Stage*> stages;
+public:
+    //! parameterised constructor
+    /*!
+        @param s pointer to Strategy
+    */
+    Rocket(LLStrategy*);
+    //! algorithms instatiated in rocket class, same algorithims in strategy classes
+    void launch(); 
+    //! algorithms instatiated in rocket class, same algorithims in strategy classes
+    void land(); 
+    /**
+     * @brief sets rState to provided variable
+     * 
+     * @param rState 
+     * the state that is used to instantiate the Rocket
+     */
+    void setRState(RState rState);
+    /**
+     * @brief Creates a clone of a Rocket
+     * 
+     * @return Rocket* 
+     * returns a copy of the Rocket
+     */
+    Rocket* clone();
 };
-
 #endif

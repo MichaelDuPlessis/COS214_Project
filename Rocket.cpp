@@ -2,20 +2,6 @@
 #include <iostream>
 using namespace std;
 
-Rocket::Rocket()
-{
-  
-}
-
-void Rocket::launch()
-{
-
-}
-
-void Rocket::land()
-{
-
-}
 
 RState Rocket::createRState()
 {
@@ -29,5 +15,18 @@ void Rocket::setRState(RState rState)
 
 Rocket* Rocket::clone()
 {
+
+}
+
+Rocket::Rocket(LLStrategy* s) {
+    strategy = s;
+}
+
+void Rocket::launch() {
+    strategy->launch(); //calling concrete strategy launch and land, client chooses which rocket
+}
+
+void Rocket::land() {
+    strategy->land();
 
 }
