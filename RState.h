@@ -7,11 +7,14 @@ using namespace std;
 
 class RState {
     private:
-       
+       State state;
 
     public:
         RState();
         ~RState(); 
+
+        State getState();
+        void setState(State state);
 
        
     
