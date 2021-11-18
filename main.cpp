@@ -1,4 +1,4 @@
-#include "Thruster.h"
+#include "thruster.h"
 #include "Stage.h"
 #include "StageObserver.h"
 #include "land.h"

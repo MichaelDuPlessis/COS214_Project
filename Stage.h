@@ -1,7 +1,7 @@
 #ifndef STAGE_H
 #define STAGE_H
 
-#include "Thruster.h"
+#include "thruster.h"
 
 class StageObserver;
 

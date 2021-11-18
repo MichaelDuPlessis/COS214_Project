@@ -1,7 +1,7 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include "rocket.h"
+#include "Rocket.h"
 #include<iostream>
 
 /**
