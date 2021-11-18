@@ -1,7 +1,7 @@
 #ifndef MERLIN_H
 #define MERLIN_H
 
-#include "Thruster.h";
+#include "thruster.h"
 
 /**
  * @brief Class which functions as the leaf in the composite design pattern

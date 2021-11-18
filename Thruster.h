@@ -10,6 +10,11 @@ class Thruster
 {
     public:
         /**
+         * @brief Destroy the Thruster object
+         * 
+         */
+        virtual ~Thruster();
+        /**
          * @brief method which simulates the thruster turning on 
          * @return void
          */

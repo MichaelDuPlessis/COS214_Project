@@ -1,8 +1,8 @@
 #ifndef FALCON_CORE_H
 #define FALCON_CORE_H
 
-#include "Thruster.h";
-#include <vector>;
+#include "thruster.h"
+#include <vector>
 
 /**
  * @brief Acts as the composite in the composite design pattern
