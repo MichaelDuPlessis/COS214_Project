@@ -1,10 +1,3 @@
-/*
-	Completed By: 
-		Name: Jonah Gasura
-		Student Number: 20592061
-
-*/		
-
 #ifndef STAGEOBSERVER_H
 #define STAGEOBSERVER_H
 
@@ -13,21 +6,46 @@
 
 using namespace std;
 
+/**
+ * @brief 
+ * The class which acts as the Object participant in the Observer design pattern
+ * 
+ * @class StageObserver
+ */
 class StageObserver
 {
 
 public:
-	StageObserver();
+	/**
+	 * @brief Construct a new Stage Observer object
+	 * 
+	 */
+	StageObserver(Stage *s);
 
+	/**
+	 * @brief Destroy the Stage Observer object
+	 * 
+	 */
 	~StageObserver();
 
+	/**
+	 * @brief update state of observed subject
+	 * 
+	 */
 	void update();
 
-private: 
+private:
+	/**
+	 * @brief string value of warning message of observed subject
+	 * 
+	 */
 	string warning;
-	Stage* subject
 
-	
+	/**
+	 * @brief subject which current observer is observing
+	 * 
+	 */
+	Stage *subject;
 };
 
 #endif

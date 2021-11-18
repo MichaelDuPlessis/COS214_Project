@@ -11,26 +11,29 @@
 
 using namespace std;
 
-Thruster::Thruster(){
-	cout<<"New Thruster Created!"<<endl;
+Thruster::Thruster()
+{
+	cout << "New Thruster Created!" << endl;
 }
 
-Thruster::~Thruster(){
-	cout<<"Thruster Destroyed!"
+Thruster::~Thruster()
+{
+	cout << "Thruster Destroyed!" << endl;
 }
 
-void Thruster::fire(){
-	cout<<"Thruster fired!"<<endl;
+void Thruster::fire()
+{
+	cout << "Thruster fired!" << endl;
 }
 
-void Thruster::add(Thruster* thruster){
-
+void Thruster::add(Thruster *thruster)
+{
 }
 
-void Thruster::remove(Thruster* thruster){
-
+void Thruster::remove(Thruster *thruster)
+{
 }
 
-void Thruster::getChild(int pos){
-	
+void Thruster::getChild(int pos)
+{
 }
