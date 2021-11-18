@@ -1,1 +1,3 @@
-#include "Thruster.h"
+#include "thruster.h"
+
+Thruster::~Thruster() {}
