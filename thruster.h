@@ -15,6 +15,11 @@ class Thruster
          */
         virtual void fire() = 0;
         /**
+         * @brief turns the thrusters off
+         * 
+         */
+        virtual void stop() = 0;
+        /**
          * @brief method which adds a thruster to a list returns true if succesful
          * @return bool
          */

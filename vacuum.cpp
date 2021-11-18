@@ -19,6 +19,18 @@ Vaccuum::~Vaccuum()
         delete this->thruster;
 }
 
+void Vaccuum::fire()
+{
+    std::cout << "Vaccuum ";
+    this->thruster->fire();
+}
+
+void Vaccuum::stop()
+{
+    std::cout << "Vaccuum ";
+    this->thruster->stop();
+}
+
 bool Vaccuum::set(Thruster* thruster)
 {
     bool replacing = this->thruster != nullptr;

@@ -29,7 +29,16 @@ class FalconCore : Thruster
          */
         ~FalconCore();
 
+        /**
+         * @brief fires all children
+         * 
+         */
         void fire();
+        /**
+         * @brief turns off all children
+         * 
+         */
+        void stop();
         /**
          * @brief 
          * 

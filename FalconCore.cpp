@@ -38,3 +38,9 @@ void FalconCore::fire()
     for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
         (*itr)->fire();
 }
+
+void FalconCore::stop()
+{
+    for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
+        (*itr)->stop();
+}
