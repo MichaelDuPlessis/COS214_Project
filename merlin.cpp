@@ -1,4 +1,4 @@
-#include "Merlin.h"
+#include "merlin.h"
 #include <iostream>
 
 void Merlin::fire()
