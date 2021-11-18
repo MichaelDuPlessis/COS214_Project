@@ -1,7 +1,8 @@
 #include "Thruster.h"
 #include "Stage.h"
 #include "StageObserver.h"
-
+#include "land.h"
+#include "launch.h"
 #include <string>
 #include <iostream>
 
@@ -75,5 +76,18 @@ int main()
 
 	delete thruster1;
 
+	//=====================================
+	Rocket* r = new Rocket();
+
+	Command* _launch = new Launch(r);
+	Command* _land = new Land(r);
+
+	MissionControl* m = new MissionControl(_launch,_land);
+
+	m->launch();
+	m->land();
 	return 0;
+
+	return 0;
+}
 }
