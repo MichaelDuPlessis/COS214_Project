@@ -14,7 +14,7 @@ using namespace std;
 class Hanger {
     private:
         /**
-         * @brief private vector of RState's
+         * @brief private vector of memento's
          * 
          */
         vector<RState*> storage;
@@ -23,8 +23,28 @@ class Hanger {
         Hanger();
         ~Hanger(); 
         
+        /**
+         * @brief function to add a memento
+         * 
+         * @param rState 
+         */
         void addMemento(RState* rState);
+        /**
+         * @brief function to get the last Memento object
+         * 
+         * @return RState* 
+         * @return nullptr
+         * return is based on whether the vector is empty or not
+         */
         RState* getMemento();
+        /**
+         * @brief function to get the Memento object at a specified index
+         * 
+         * @param index 
+         * @return RState* 
+         * @return nullptr
+         * return is based on whether the vector is empty or not, and whether a valid index was supplied
+         */
         RState* getMemento(int index);
 
     
