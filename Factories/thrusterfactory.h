@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "../thruster.h"
-#include "../falcon_core.h"
+#include "../FalconCore.h"
 #include "../merlin.h"
 #include "../vacuum.h"
 

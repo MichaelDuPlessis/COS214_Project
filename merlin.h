@@ -7,7 +7,7 @@
  * @brief Class which functions as the leaf in the composite design pattern
  * @class Merlin
  */
-class Merlin : Thruster
+class Merlin : public Thruster
 {
     public:
     /**

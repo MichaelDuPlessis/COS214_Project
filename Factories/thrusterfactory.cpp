@@ -14,7 +14,7 @@ Thruster* ThrusterFactory::createCoreThruster()
 
 Thruster* ThrusterFactory::createCVaccumeThruster() 
 {
-    Thruster* v = new Vaccuum();
+    return new Vaccuum(new Merlin());
 }
 
 ThrusterFactory::~ThrusterFactory() 

@@ -3,7 +3,7 @@
 
 #include "thruster.h"
 
-class Vaccuum : Thruster
+class Vaccuum : public Thruster
 {
     public:
         /**
