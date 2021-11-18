@@ -1,8 +1,8 @@
 #include "CrewDragon.h"
 
 CrewDragon::CrewDragon() {
-    crew.push_back(new Crew("John", "Doe")); //add some basic crew
-    crew.push_back(new Crew("John", "Doe"));
+    crew.push_back(new Crew("John", "Doctor")); //add some basic crew
+    crew.push_back(new Crew("Jane", "Technician"));
 }
 
 CrewDragon::~CrewDragon() {}
@@ -25,6 +25,6 @@ void CrewDragon::printCrew()
 void CrewDragon::dockToISS() 
 {
     std::cout << "Unloading crew and cargo to ISS\n";
-    for (int i=0; i<crew.size(); i++)
+    for (int i=0; i<=crew.size(); i++)
         crew.pop_back();
 }
