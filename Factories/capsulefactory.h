@@ -2,6 +2,7 @@
 #define CAPSULEFACTORY_H
 
 #include <vector>
+#include <iostream>
 
 //#include "capsule.h"
 
