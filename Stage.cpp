@@ -19,12 +19,12 @@ Stage::~Stage()
 
 void Stage::startStage()
 {
-	cout << "Stage started!" << endl;
+	this->thruster->fire();
 }
 
 void Stage::stopStage()
 {
-	cout << "Stage stopped!" << endl;
+	this->thruster->stop();
 }
 
 string Stage::getWarning()
