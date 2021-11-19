@@ -3,6 +3,8 @@
 
 #include <iostream>
 // #include "stage.h"
+#include "../thruster.h"
+#include "thrusterfactory.h"
 class MerlinFactory;
 class Stage;
 
@@ -13,7 +15,7 @@ private:
     MerlinFactory* merlinFactory ;
 public:
     StageFactory();
-    StageFactory(MerlinFactory* m);
+    StageFactory(Thruster* m);
     Stage* createSmallStage();
     Stage* createLargeStage();
 
