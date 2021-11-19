@@ -32,3 +32,12 @@ void Rocket::land() {
 }
 
 *Rocket Rocket::getRocket() { this; }
+
+Rocket::~Rocket()
+{
+    delete this->capsule;
+    delete this->strategy;
+
+    for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
+        delete (*itr);
+}

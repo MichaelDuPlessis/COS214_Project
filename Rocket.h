@@ -21,15 +21,32 @@ using namespace std;
 class Rocket
 {
 private:
-   LLStrategy* strategy; //!< private member, pointer to a strategy
-   vector<Stage*> stages;
-   Capsule* capsule;
+    /**
+     * @brief holds the Strategy to be used
+     * 
+     */
+    LLStrategy* strategy; //!< private member, pointer to a strategy
+    /**
+     * @brief holds the different stages
+     * 
+     */
+    vector<Stage*> stages;
+    /**
+     * @brief holds the capsule
+     * 
+     */
+    Capsule* capsule;
 public:
     //! parameterised constructor
     /*!
         @param s pointer to Strategy
     */
     Rocket(LLStrategy*);
+    /**
+     * @brief Destroy the Rocket object
+     * Note All private members are deallocated
+     */
+    ~Rocket();
     /**
      * @brief Get the Rocket object
      * 
