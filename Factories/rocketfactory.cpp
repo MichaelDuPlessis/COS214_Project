@@ -1,0 +1,74 @@
+#include "rocketfactory.h"
+
+
+RocketFactory::RocketFactory() 
+{
+
+    StgFact = new StageFactory(new ThrusterFactory());
+    CDFact = new CD_CapsuleFactory();
+    CFact = new C_CapsuleFactory();
+
+    cout << "Rocket Facotry Created" << endl;
+}
+
+RocketFactory::RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleFactory *d){
+    cout << "Rocket Facotry Created" << endl;
+    StgFact = sf;
+    CDFact = cd;
+    CFact = d;
+    
+}
+//====================================================================================================================//
+
+Rocket* RocketFactory::buildFalconHeavy(LLStrategy* strat, bool crewdragon = true){
+    vector<Stage*> stages;
+    Capsule* c = builldCapsule(crewdragon);
+
+////// create first stage ///////////////////////////////////
+
+    Stage* s = StgFact->createLargeStage(false);        // -> false because its a falcon heavy
+    stages.push_back(s);
+
+////// create second stage //////////////////////////////////
+    s = StgFact->createSmallStage();
+    stages.push_back(s);
+
+    return new Rocket(strat, c, stages);
+
+}
+//====================================================================================================================//
+
+Rocket* RocketFactory::buildFalcon9(LLStrategy* strat, bool crewdragon = true){
+
+    vector<Stage*> stages;
+    Capsule* c = builldCapsule(crewdragon);
+
+////// create first stage ///////////////////////////////////
+
+    Stage* s = StgFact->createLargeStage(true);        // -> true because its a falcon 9
+    stages.push_back(s);
+
+////// create second stage //////////////////////////////////
+    s = StgFact->createSmallStage();
+    stages.push_back(s);
+
+    return new Rocket(strat, c, stages);
+}
+//====================================================================================================================//
+
+Capsule* RocketFactory::builldCapsule(bool crewdragon) 
+{
+    Capsule* c;
+    if(crewdragon) c = CDFact->buildCapsule();
+    else c = CFact->buildCapsule();
+}
+
+RocketFactory::~RocketFactory(){    
+    delete StgFact;
+    delete CDFact;
+    delete CFact ;
+
+    cout << "Rocket Facotry Destroyed" << endl;
+}
+
+
