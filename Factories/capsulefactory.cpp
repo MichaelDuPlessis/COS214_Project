@@ -7,6 +7,8 @@ CapsuleFactory::CapsuleFactory()
 
 }
 
+CapsuleFactory::~CapsuleFactory() {}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 CD_CapsuleFactory::CD_CapsuleFactory() 

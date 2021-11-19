@@ -15,7 +15,9 @@ MasterNetwork::~MasterNetwork(){
 
 MasterNetwork* MasterNetwork::singleton = 0;
 
-int MasterNetwork::getID() { return this->nextId++; }
+int MasterNetwork::nextId;
+
+int MasterNetwork::getID() { return nextId++; }
 
 MasterNetwork* MasterNetwork::instance() {
   if(singleton == 0) {

@@ -28,7 +28,7 @@ class MasterNetwork {
      * 
      * @return int 
      */
-    int getID();
+    static int getID();
     
   protected:
       /**
