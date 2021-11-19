@@ -39,3 +39,5 @@ Rocket::~Rocket()
     for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
         delete (*itr);
 }
+
+void Rocket::setTarget(Network* target) { this->target = target; }

@@ -47,10 +47,13 @@ private:
      */
     Rocket();
 public:
-    //! parameterised constructor
-    /*!
-        @param s pointer to Strategy
-    */
+    /**
+     * @brief Construct a new Rocket object
+     * 
+     * @param strategy 
+     * @param capsule 
+     * @param stages 
+     */
     Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
     /**
      * @brief Destroy the Rocket object
@@ -81,5 +84,11 @@ public:
      * returns a copy of the Rocket
      */
     Rocket* clone();
+    /**
+     * @brief Set the Target object
+     * 
+     * @param target 
+     */
+    void setTarget(Network* target);
 };
 #endif
