@@ -21,7 +21,7 @@ void Rocket::land()
     strategy->land();
 }
 
-*Rocket Rocket::getRocket() { this; }
+Rocket* Rocket::getRocket() { return this; }
 
 Rocket::~Rocket()
 {
@@ -37,6 +37,7 @@ Rocket::~Rocket()
 RState* Rocket::createRState()
 {
     return new RState(this->strategy, this->capsule, this->stages, this->target);
+
 }
 
 void Rocket::setRState(RState* rState)
