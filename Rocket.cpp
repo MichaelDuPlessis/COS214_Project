@@ -7,6 +7,13 @@ Rocket::Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages) : 
 void Rocket::launch() 
 {
     strategy->launch(); //calling concrete strategy launch and land, client chooses which rocket
+
+    // iterating through stages
+    for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
+        (*itr)->startStage();
+    
+    // launching capsule
+    this->capsule->dockToISS(target);
 }
 
 void Rocket::land() 
@@ -18,6 +25,8 @@ void Rocket::land()
 
 Rocket::~Rocket()
 {
+    // don't delete this->target as it is a global thing which should be delted in main
+
     delete this->capsule;
     delete this->strategy;
 
@@ -38,22 +47,10 @@ void Rocket::setRState(RState* rState)
     this->target = rState->target;
 }
 
-RState* Rocket::createMemento()
-{
-
-}
-
-
 Rocket* Rocket::clone()
 {
-    delete this->capsule;
-    delete this->strategy;
-
-    for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
-        delete (*itr);
-}
-
-void Rocket::setTarget(Network* target) { this->target = target; }
     // todo once we have factories to make 
     // copies of strategy and stage, maybe use clone witht them
 }
+
+void Rocket::setTarget(Network* target) { this->target = target; }
