@@ -12,13 +12,11 @@ int main()
 
     for (int i=0;i<61;i++)
     {
-        crewdragon->addToNetwork(new StarlinkSatellite(i));
+        dragon->addToNetwork(new StarlinkSatellite(i));
     }
 
-    crewdragon->addCrew(new Crew("Cara", "disappointment quota"));
-    crewdragon->addCrew(new Crew("Mike", "Tisha"));
 
-    crewdragon->dockToISS(glbNetwork);
+    dragon->dockToISS(glbNetwork);
 
     return 0;
 }

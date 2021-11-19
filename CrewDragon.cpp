@@ -5,7 +5,18 @@ CrewDragon::CrewDragon() : Capsule("Crew Dragon") {
     crew.push_back(new Crew("Jane", "Technician"));
 }
 
-CrewDragon::~CrewDragon() {}
+CrewDragon::~CrewDragon() 
+{
+    if (crew.size() != 0)
+    {
+        std::vector<Crew *>::iterator it;
+
+        for (it = crew.begin(); it != crew.end(); it++)
+            delete (*it);
+            (*it) = nullptr;
+
+    }
+}
 
 void CrewDragon::unloadCrew() 
 {

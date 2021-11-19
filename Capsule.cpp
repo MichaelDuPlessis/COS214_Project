@@ -2,11 +2,15 @@
 
 Capsule::Capsule(std::string name) : name(name) {}
 
-Capsule::~Capsule() {}
+Capsule::~Capsule() 
+{
+    delete satStorage;
+    satStorage = nullptr;
+}
 
 void Capsule::unloadCrew() 
 {
-    std::cout << "This capsule has now crew to unload.\n";
+    std::cout << "This capsule has no crew to unload.\n";
 }
 
 void Capsule::dockToISS(Network * glbNetwork)
