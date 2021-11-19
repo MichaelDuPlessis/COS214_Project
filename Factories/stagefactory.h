@@ -16,7 +16,7 @@ public:
     StageFactory();
     StageFactory(ThrusterFactory* t);
     Stage* createSmallStage();
-    Stage* createLargeStage(bool falcon9thruster = true);
+    Stage* createLargeStage(bool falcon9thruster);
     ~StageFactory();
 
 };

@@ -18,7 +18,7 @@ public:
     CapsuleFactory();
     virtual Capsule* buildCapsule() = 0;
 
-    ~CapsuleFactory();
+    virtual ~CapsuleFactory();
 };
 
 

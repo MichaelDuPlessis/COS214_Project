@@ -6,9 +6,9 @@ SatelliteFactory::SatelliteFactory()
     cout << "Satellite Factory Created" << endl;
 }
 
-Satellite* SatelliteFactory::createSatellite() 
+StarlinkSatellite* SatelliteFactory::createSatellite() 
 {
-    return new Satellite();
+    return new StarlinkSatellite();
 }
 
 

@@ -22,6 +22,13 @@ class MasterNetwork {
           * @param[out] deletes network and then instantiates a new one
         */
     void clearNetwork();
+
+    /**
+     * @brief gets the enxt satellites id
+     * 
+     * @return int 
+     */
+    int getID();
     
   protected:
       /**
@@ -46,6 +53,11 @@ class MasterNetwork {
       */
 	  static MasterNetwork* singleton;
 	
+    /**
+     * @brief the next id for the next starlink satellite
+     * 
+     */
+    static int nextId;
 };
 
 

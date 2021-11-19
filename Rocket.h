@@ -40,11 +40,6 @@ private:
      */
     Capsule* capsule;
     /**
-     * @brief target network to deliver too (i.e. global network)
-     * 
-     */
-    Network* target;
-    /**
      * @brief Construct a new Rocket object
      * to insure that the base constructor cannot be called
      */
@@ -93,12 +88,5 @@ public:
      * The newly created memento
      */
     RState* createRState();
-
-    /**
-     * @brief Set the Target object
-     * 
-     * @param target 
-     */
-    void setTarget(Network* target);
 };
 #endif

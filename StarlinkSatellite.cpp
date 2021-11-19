@@ -1,7 +1,11 @@
 #include "StarlinkSatellite.h"
+#include "MasterNetwork.h"
 #include <iostream>
 
-StarlinkSatellite::StarlinkSatellite(int id) : id(id) {} 
+StarlinkSatellite::StarlinkSatellite()
+{
+    this->id = MasterNetwork::instance()->getID();
+} 
 
 StarlinkSatellite::~StarlinkSatellite() {}
 

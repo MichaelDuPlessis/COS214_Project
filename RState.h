@@ -35,12 +35,6 @@ class RState {
         vector<Stage*> stages;
 
         /**
-         * @brief Private pointer variable to the target network to deliver to (eg. global network)
-         * 
-         */
-        Network* target;
-
-        /**
          * @brief Construct a new RState object
          * Private to ensure base contructor can't be called
          * 
@@ -55,7 +49,7 @@ class RState {
          * @param stages 
          * @param target 
          */
-        RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, Network* target);
+        RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
 
     public:
         

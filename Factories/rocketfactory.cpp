@@ -61,6 +61,8 @@ Capsule* RocketFactory::builldCapsule(bool crewdragon)
     Capsule* c;
     if(crewdragon) c = CDFact->buildCapsule();
     else c = CFact->buildCapsule();
+
+    return c;
 }
 
 RocketFactory::~RocketFactory(){    

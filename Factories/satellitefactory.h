@@ -1,7 +1,7 @@
 #ifndef SATELLITEFACTORY_H
 #define SATELLITEFACTORY_H
 
-class Satellite{public: Satellite();};
+#include "../StarlinkSatellite.h"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ class SatelliteFactory
 public:
     SatelliteFactory();
 
-    Satellite* createSatellite();
+    StarlinkSatellite* createSatellite();
 
     ~SatelliteFactory();
 };

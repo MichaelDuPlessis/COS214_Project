@@ -6,7 +6,7 @@ StageFactory::StageFactory()
     cout << "Created Stage Factory" << endl;
 }
 
-StageFactory::StageFactory()
+StageFactory::~StageFactory()
 {
     delete thrusterFactory;
     cout << "Destoyed Stage Factory" << endl;

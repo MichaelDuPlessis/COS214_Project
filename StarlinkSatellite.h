@@ -18,7 +18,7 @@ public:
      * @param id
      * set the StarlinkSatellite id to the parameter
      */
-    StarlinkSatellite(int);
+    StarlinkSatellite();
     /**     * @brief destroy a StarlinkSatellite object.    */
     ~StarlinkSatellite();
     /**

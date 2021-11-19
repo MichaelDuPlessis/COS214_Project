@@ -13,7 +13,7 @@ void Rocket::launch()
         (*itr)->startStage();
     
     // launching capsule
-    this->capsule->dockToISS(target);
+    this->capsule->dockToISS();
 }
 
 void Rocket::land() 
@@ -36,7 +36,7 @@ Rocket::~Rocket()
 
 RState* Rocket::createRState()
 {
-    return new RState(this->strategy, this->capsule, this->stages, this->target);
+    return new RState(this->strategy, this->capsule, this->stages);
 }
 
 void Rocket::setRState(RState* rState)
@@ -44,7 +44,4 @@ void Rocket::setRState(RState* rState)
     this->strategy = rState->strategy;
     this->capsule = rState->capsule;
     this->stages = rState->stages;
-    this->target = rState->target;
 }
-
-void Rocket::setTarget(Network* target) { this->target = target; }
