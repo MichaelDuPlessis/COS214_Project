@@ -6,8 +6,6 @@
 #include "../thruster.h"
 #include "../Stage.h"
 #include "thrusterfactory.h"
-class MerlinFactory;
-class Stage;
 
 using namespace std; 
 class StageFactory
