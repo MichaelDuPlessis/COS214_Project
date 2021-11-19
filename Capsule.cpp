@@ -9,6 +9,12 @@ Capsule::~Capsule()
 {
 }
 
+// should never be called in this class
+bool Capsule::addCrew(Crew* crew)
+{
+    return false;
+}
+
 void Capsule::unloadCrew() 
 {
     std::cout << "This capsule has no crew to unload.\n";

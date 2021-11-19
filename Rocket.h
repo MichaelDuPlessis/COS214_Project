@@ -61,6 +61,24 @@ public:
     ~Rocket();
 
     /**
+     * @brief adds a satellite to the rockets current capsule
+     * 
+     * @param satellite 
+     * @return true 
+     * @return false 
+     */
+    bool addPayload(StarlinkSatellite * satellite);
+
+    /**
+     * @brief adds crew to rockets capsule if possible
+     * 
+     * @param satellite 
+     * @return true 
+     * @return false 
+     */
+    bool addCrew(Crew* crew);
+
+    /**
      * @brief Get the Rocket object
      * 
      * @return Rocket* 

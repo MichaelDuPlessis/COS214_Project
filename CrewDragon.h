@@ -1,7 +1,6 @@
 #ifndef CREWDRAGON_H
 #define CREWDRAGON_H
 
-#include "Crew.h"
 #include "Capsule.h"
 #include "network.h"
 #include "StarlinkSatellite.h"

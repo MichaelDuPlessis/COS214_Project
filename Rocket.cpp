@@ -45,3 +45,13 @@ void Rocket::setRState(RState* rState)
     this->capsule = rState->capsule;
     this->stages = rState->stages;
 }
+
+bool Rocket::addPayload(StarlinkSatellite * satellite) 
+{
+    return this->capsule->addToNetwork(satellite);
+}
+
+bool Rocket::addCrew(Crew* crew) 
+{
+    return this->capsule->addCrew(crew);
+}

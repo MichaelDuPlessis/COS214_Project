@@ -35,7 +35,7 @@ C_CapsuleFactory::C_CapsuleFactory()
 
 Capsule* C_CapsuleFactory::buildCapsule() 
 {
-    return new CrewDragon();
+    return new Dragon();
 }
 
 C_CapsuleFactory::~C_CapsuleFactory() 

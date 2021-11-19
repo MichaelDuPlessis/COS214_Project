@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-
+#include "Crew.h"
 #include "network.h"
 #include "MasterNetwork.h"
 
@@ -62,6 +62,13 @@ public:
      */
     void dockToISS();
 
+    /**
+     * @brief should do nothing in this class
+     * 
+     * @return true 
+     * @return false 
+     */
+    virtual bool addCrew(Crew *);
 };
 
 #endif
