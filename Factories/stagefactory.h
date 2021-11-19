@@ -4,6 +4,7 @@
 #include <iostream>
 // #include "stage.h"
 #include "../thruster.h"
+#include "../Stage.h"
 #include "thrusterfactory.h"
 class MerlinFactory;
 class Stage;
@@ -12,12 +13,13 @@ using namespace std;
 class StageFactory
 {
 private:
-    MerlinFactory* merlinFactory ;
+    ThrusterFactory* thrusterFactory ;
 public:
     StageFactory();
-    StageFactory(Thruster* m);
+    StageFactory(ThrusterFactory* t);
     Stage* createSmallStage();
-    Stage* createLargeStage();
+    Stage* createLargeStage(bool falcon9thruster = true);
+    ~StageFactory();
 
 };
 
