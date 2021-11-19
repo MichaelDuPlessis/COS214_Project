@@ -8,7 +8,6 @@ int main()
 {
     Dragon * dragon = new Dragon();
     CrewDragon * crewdragon = new CrewDragon();
-    Network * glbNetwork = new Network();
 
     for (int i=0;i<61;i++)
     {
@@ -16,7 +15,7 @@ int main()
     }
 
 
-    dragon->dockToISS(glbNetwork);
+    dragon->dockToISS();
 
     return 0;
 }

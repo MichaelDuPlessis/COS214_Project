@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "network.h"
+#include "MasterNetwork.h"
 
 /**
  * @class Capsule
@@ -42,10 +43,8 @@ public:
     virtual void unloadContents() = 0;
     /**     
      * @brief add the StarlinkSatellites to the global network and remove it from Capsule storage object    
-     * @param glbNetwork
-     * the global Network object that the Capsule's Network storage object will be deploying to.
      */
-    void deployToNetwork(Network * glbNetwork);
+    void deployToNetwork();
     /**     
      * @brief add StarlinkSatellites to the Capsules storage object     
      * @param satellite
@@ -58,11 +57,10 @@ public:
 
      /**     
      * @brief add the StarlinkSatellites to the global network and remove it from Capsule storage object    
-     * @param glbNetwork
-     * the global Network object that the Capsule's deployToNetwork() function makes use of.
+     * @param[out] adds capsules satlellites to global satellites
      * @return void
      */
-    void dockToISS(Network * glbNetwork);
+    void dockToISS();
 
 };
 

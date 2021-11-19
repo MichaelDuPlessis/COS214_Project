@@ -13,16 +13,16 @@ void Capsule::unloadCrew()
     std::cout << "This capsule has no crew to unload.\n";
 }
 
-void Capsule::dockToISS(Network * glbNetwork)
+void Capsule::dockToISS()
 {
-    this->deployToNetwork(glbNetwork);
+    this->deployToNetwork();
     std::cout << name << " is docking to the International Space Station\n";
     this->unloadCrew();
     this->unloadContents();
     std::cout << name << " has finished unloading its contents on the ISS, detaching...\n";
 }
 
-void Capsule::deployToNetwork(Network * glbNetwork)
+void Capsule::deployToNetwork()
 {
     int count = 0;
     Iterator * it = satStorage->createIterator();
@@ -30,7 +30,7 @@ void Capsule::deployToNetwork(Network * glbNetwork)
     for (it->first(); !it->end(); it->next())
     {   
         std::cout << "Deployed Satellite with ID: " << it->current()->getID() << "\n";
-        glbNetwork->addSatellite(it->current());
+        MasterNetwork::instance()->network()->addSatellite(it->current());
     }
 
     satStorage->clear();
