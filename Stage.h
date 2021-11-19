@@ -29,7 +29,7 @@ public:
 
 	/**
 	 * @brief Destroy the Stage object
-	 * 
+	 * Note deletes the thruster variable
 	 */
 	~Stage();
 

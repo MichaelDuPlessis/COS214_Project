@@ -15,6 +15,7 @@ Stage::Stage(Thruster *t)
 Stage::~Stage()
 {
 	cout << "Stage Destroyed!" << endl;
+	delete this->thruster;
 }
 
 void Stage::startStage()
