@@ -5,27 +5,28 @@
 
 using namespace std;
 
-Stage::Stage(Thruster *t)
+Stage::Stage()
 {
-	this->thruster = t;
-	this->warning = "none";
 	cout << "New Stage Created!" << endl;
 }
 
 Stage::~Stage()
 {
 	cout << "Stage Destroyed!" << endl;
-	delete this->thruster;
+	for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
+        delete (*itr);
 }
 
 void Stage::startStage()
 {
-	this->thruster->fire();
+	for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
+        (*itr)->fire();
 }
 
 void Stage::stopStage()
 {
-	this->thruster->stop();
+	for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
+        (*itr)->stop();
 }
 
 string Stage::getWarning()
@@ -74,4 +75,10 @@ void Stage::notify()
 		(*it)->update();
 		cout << "Observer notified!" << endl;
 	}
+}
+
+void Stage::addThruster(Thruster* thruster)
+{
+	if (this->thrusters.size() < 3)
+		this->thrusters.push_back(thruster);
 }

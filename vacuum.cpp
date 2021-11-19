@@ -1,37 +1,37 @@
 #include "vacuum.h"
 #include <iostream>
 
-Vaccuum::Vaccuum()
+Vacuum::Vacuum()
 {
     this->thruster = nullptr;
     this->deleteThruster = false;
 }
 
-Vaccuum::Vaccuum(bool deleteThruster) : deleteThruster(deleteThruster) { this->thruster = nullptr; }
+Vacuum::Vacuum(bool deleteThruster) : deleteThruster(deleteThruster) { this->thruster = nullptr; }
 
-Vaccuum::Vaccuum(Thruster* thruster) : thruster(thruster) { this->deleteThruster = false; }
+Vacuum::Vacuum(Thruster* thruster) : thruster(thruster) { this->deleteThruster = false; }
 
-Vaccuum::Vaccuum(Thruster* thruster, bool deleteThruster) : thruster(thruster), deleteThruster(deleteThruster) {}
+Vacuum::Vacuum(Thruster* thruster, bool deleteThruster) : thruster(thruster), deleteThruster(deleteThruster) {}
 
-Vaccuum::~Vaccuum()
+Vacuum::~Vacuum()
 {
     if (this->deleteThruster && this->thruster)
         delete this->thruster;
 }
 
-void Vaccuum::fire()
+void Vacuum::fire()
 {
-    std::cout << "Vaccuum ";
+    std::cout << "Vacuum ";
     this->thruster->fire();
 }
 
-void Vaccuum::stop()
+void Vacuum::stop()
 {
-    std::cout << "Vaccuum ";
+    std::cout << "Vacuum ";
     this->thruster->stop();
 }
 
-bool Vaccuum::set(Thruster* thruster)
+bool Vacuum::set(Thruster* thruster)
 {
     bool replacing = this->thruster != nullptr;
 
@@ -40,7 +40,7 @@ bool Vaccuum::set(Thruster* thruster)
     return replacing;
 }
 
-bool Vaccuum::remove()
+bool Vacuum::remove()
 {
     if (!this->thruster)
         return false;
@@ -51,7 +51,7 @@ bool Vaccuum::remove()
     return true;
 }
 
-bool Vaccuum::remove(bool del)
+bool Vacuum::remove(bool del)
 {
     if (del)
         return this->remove();

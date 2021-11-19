@@ -8,7 +8,7 @@
  * @brief Acts as the composite in the composite design pattern
  * @class FalconCore
  */
-class FalconCore : Thruster
+class FalconCore : public Thruster
 {
     public:
         /**

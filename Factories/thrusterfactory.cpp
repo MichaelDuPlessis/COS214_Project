@@ -11,33 +11,33 @@ Thruster* ThrusterFactory::createCoreThruster()
     return customThrustor(true,0,9);
 }
 
-ThrusterFactory::createVaccumeThruster() 
+Thruster* ThrusterFactory::createVaccumeThruster() 
 {
     return customThrustor(true,1,1); 
 }
 
 Thruster* ThrusterFactory::customThrustor(bool hascore, int decorated, int engines){
-    Thruster* thrustor;
+    Thruster* thruster;
     
     if(hascore){
-        thrustor = new FalconCore(true); 
+        thruster = new FalconCore(true); 
     }
     else{
-        thrustor =  new Merlin();
-        if(engines <= decorated)  thrustor =  Vacuum(thuster, true);                     // add decorator 
+        thruster =  new Merlin();
+        if(engines <= decorated)  thruster = new Vacuum(thruster, true);                     // add decorator 
 
-        return thruster
+        return thruster;
     }
 
     for (int i = 0; i < engines; i++)
     {
-        Thurster* engine = new Merlin();
-        if(i <decorated)  engine = new Vacuum(engin, true);                     // add decorator 
+        Thruster* engine = new Merlin();
+        if(i <decorated)  engine = new Vacuum(engine, true);                     // add decorator 
 
-        thrustor->addThruster(new Merlin());
+        thruster->addThruster(new Merlin());
     }
     
-    return thruster
+    return thruster;
 }
 ThrusterFactory::~ThrusterFactory() 
 {

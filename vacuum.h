@@ -3,7 +3,7 @@
 
 #include "thruster.h"
 
-class Vaccuum : Thruster
+class Vacuum : public Thruster
 {
     public:
         /**
@@ -11,7 +11,7 @@ class Vaccuum : Thruster
          * deleteThruster set to false
          * thruster set to nullpointer
          */
-        Vaccuum();
+        Vacuum();
         /**
          * @brief Construct a new Vaccuum object
          * 
@@ -19,7 +19,7 @@ class Vaccuum : Thruster
          * way to instantiate thruster
          * deleteThruster set to false
          */
-        Vaccuum(Thruster* thruster);
+        Vacuum(Thruster* thruster);
         /**
          * @brief Construct a new Vaccuum object
          * 
@@ -27,7 +27,7 @@ class Vaccuum : Thruster
          * thruster set to nullpointer
          * way to set deleteThruster
          */
-        Vaccuum(bool deleteThruster);
+        Vacuum(bool deleteThruster);
         /**
          * @brief Construct a new Vaccuum object
          * 
@@ -36,12 +36,12 @@ class Vaccuum : Thruster
          * way to set deleteThruster
          * way to instantiate thruster
          */
-        Vaccuum(Thruster* thruster, bool deleteThruster);
+        Vacuum(Thruster* thruster, bool deleteThruster);
         /**
          * @brief Destroy the Vaccuum object
          * deletes thruster if deleteThruster set to true
          */
-        ~Vaccuum();
+        ~Vacuum();
 
         /**
          * @brief prints decorator
