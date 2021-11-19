@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 #include "thruster.h"
 #include "Stage.h"
 #include "StageObserver.h"
 #include "land.h"
 #include "launch.h"
+#include "missionControl.h"
 #include <string>
 #include <iostream>
 
@@ -92,27 +92,3 @@ int main()
 	return 0;
 }
 }
-=======
-#include "CrewDragon.h"
-#include "Dragon.h"
-#include "network.h"
-
-using namespace std;
-
-int main() 
-{
-    Dragon * dragon = new Dragon();
-    CrewDragon * crewdragon = new CrewDragon();
-    Network * glbNetwork = new Network();
-
-    for (int i=0;i<61;i++)
-    {
-        dragon->addToNetwork(new StarlinkSatellite(i));
-    }
-
-
-    dragon->dockToISS(glbNetwork);
-
-    return 0;
-}
->>>>>>> Satellites
