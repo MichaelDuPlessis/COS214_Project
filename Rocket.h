@@ -74,7 +74,7 @@ public:
 
     //! algorithms instatiated in rocket class, same algorithims in strategy classes
     void land(); 
-    
+
     /**
      * @brief reinstatiate Rocket with stored RState variables
      * 
@@ -83,6 +83,12 @@ public:
      */
     void setRState(RState* rState);
 
+    /**
+     * @brief Create new Memento (RState)
+     * 
+     * @return RState* 
+     * The newly created memento
+     */
     RState* createRState();
 
     /**
