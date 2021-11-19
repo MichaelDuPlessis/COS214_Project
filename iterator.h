@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include "starlinkSatellite.h"
+#include "StarlinkSatellite.h"
 
 /**
 	*Iterator participant in the iterator design pattern

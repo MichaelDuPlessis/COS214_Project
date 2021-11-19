@@ -5,8 +5,10 @@
 #include <vector>
 #include <iostream>
 
+#include "aggregate.h"
 
-class Capsule // : public aggregate
+
+class Capsule : public aggregate
 {
 private:
 

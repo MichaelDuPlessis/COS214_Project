@@ -1,7 +1,7 @@
 #ifndef SATELLITEITERATOR_H
 #define SATELLITEITERATOR_H
 
-#include "Iterator.h"
+#include "iterator.h"
 #include<vector>
 
 /**
