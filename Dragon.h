@@ -8,9 +8,7 @@ class Dragon : public Capsule
 public:
     Dragon();
     ~Dragon();
-    void printCrew();
-    void dockToISS();
-
+    void unloadContents();
 
 };
 

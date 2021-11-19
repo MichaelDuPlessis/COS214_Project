@@ -7,30 +7,21 @@ CrewDragon::CrewDragon() {
 
 CrewDragon::~CrewDragon() {}
 
-void CrewDragon::printCrew() 
+void CrewDragon::unloadCrew() 
 {
     std::vector<Crew *>::iterator it;
-
+    std::cout << "Unloading the following Crew: \n";
     for (it = crew.begin(); it != crew.end(); it++)
+    {
         std::cout << "Name: "<< (*it)->getName() << "\tSpecialisation: " << (*it)->getSpecialisation() << std::endl;
+        delete (*it);
+    }
+    
+    std::cout << crew.size() << " - Crew Size\n";
 }
 
-// void CrewDragon::printSatellites() {
-    // std::vector<StarlinkSatellitess *>::iterator it;
-
-    // for (it = satellites.begin(); it != satellites.end(); it++)
-    //     std::cout << "Name: "<< (*it)->getName() << "\tSpecialisation: " << (*it)->getSpecialisation() << std::endl;
-// }
-
-void CrewDragon::dockToISS() 
+void CrewDragon::unloadContents()
 {
-    std::cout << "Unloading crew and cargo to ISS\n";
-    for (int i=0; i<=crew.size(); i++)
-        crew.pop_back();
+    std::cout << "Unloading Cargo from the CrewDragon Capsule\n";
 }
 
-std::vector<Crew *> CrewDragon::getCrew()
-{    return crew;   }
-
-void CrewDragon::setCrew(std::vector<Crew *> inCrew) 
-{   crew = inCrew;  }

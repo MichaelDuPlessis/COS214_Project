@@ -10,13 +10,19 @@
 
 class Capsule 
 {
+private:
+    Network * satStorage;
+    const int capacity = 60;
 public:
     Capsule();
     ~Capsule();
-    virtual void printCrew() = 0;
-    virtual void dockToISS() = 0;
-    virtual Capsule * clone() = 0;
-    virtual void deployNetwork() = 0;
+    virtual void unloadCrew();
+    virtual void unloadContents() = 0;
+    void deployToNetwork(Network *);
+    bool addToNetwork(StarlinkSatellite *);
+    
+    void dockToISS(Network *);
+
 };
 
 #endif

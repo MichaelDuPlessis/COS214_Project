@@ -3,8 +3,8 @@
 
 #include "Crew.h"
 #include "Capsule.h"
+#include "network.h"
 #include "StarlinkSatellite.h"
-
 
 class CrewDragon : public Capsule
 {
@@ -13,15 +13,11 @@ private:
 public:
     CrewDragon();
     ~CrewDragon();
-    void printCrew();
-    // void printSatellites();
-    void dockToISS();
-    Capsule * clone();
+    void unloadCrew();
+    void unloadContents();
 
-    // std::vector<Crew *> getCrew();
-    // void setCrew(std::vector<Crew *>);
-    // std::vector<StarlinkSatellite *> getSatellites();
-    // void setSatellites(std::vector<StarlinkSatellite *>);
+    void addCrew(Crew *);
+    Crew * getCrewAtIndex(int);
 };
 
 

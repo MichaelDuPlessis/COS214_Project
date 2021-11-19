@@ -4,6 +4,18 @@ Capsule::Capsule() {}
 
 Capsule::~Capsule() {}
 
-void Capsule::printCrew() {}
+void Capsule::unloadCrew() 
+{
+    std::cout << "This capsule has now crew to unload.\n";
+}
 
-// void Capsule::printSatellites() {}
+void Capsule::dockToISS(Network * glbNetwork)
+{
+    this->deployToNetwork(glbNetwork);
+    this->unloadContents();
+}
+
+bool Capsule::addToNetwork(StarlinkSatellite * satellite)
+{
+    satStorage->addSatellite(satellite);
+}

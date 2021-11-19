@@ -8,7 +8,7 @@ class Crew
 private:
     std::string name;
     std::string specialisation;
-    
+     
 public:
     Crew(std::string, std::string);
     ~Crew();

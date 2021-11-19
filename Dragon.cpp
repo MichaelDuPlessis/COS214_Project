@@ -4,19 +4,8 @@ Dragon::Dragon() {}
 
 Dragon::~Dragon() {}
 
-void Dragon::printCrew()
+void Dragon::unloadContents()
 {
-    std::cout << "Dragon capsule holds no crew\n";
+    std::cout << "Unloading cargo from Dragon capsule\n";
 }
 
-// void CrewDragon::printSatellites() {
-    // std::vector<StarlinkSatellitess *>::iterator it;
-
-    // for (it = satellites.begin(); it != satellites.end(); it++)
-    //     std::cout << "Name: "<< (*it)->getName() << "\tSpecialisation: " << (*it)->getSpecialisation() << std::endl;
-// }
-
-void Dragon::dockToISS()
-{
-    std::cout << "Unloading cargo to ISS\n";
-}
