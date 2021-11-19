@@ -19,9 +19,7 @@ Rocket* Rocket::clone()
     // copies of strategy and stage, maybe use clone witht them
 }
 
-Rocket::Rocket(LLStrategy* s) {
-    strategy = s;
-}
+Rocket::Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages) : strategy(strategy), capsule(capsule), stages(stages) {}
 
 void Rocket::launch() {
     strategy->launch(); //calling concrete strategy launch and land, client chooses which rocket

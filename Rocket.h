@@ -36,12 +36,22 @@ private:
      * 
      */
     Capsule* capsule;
+    /**
+     * @brief target network to deliver too (i.e. global network)
+     * 
+     */
+    Network* target;
+    /**
+     * @brief Construct a new Rocket object
+     * to insure that the base constructor cannot be called
+     */
+    Rocket();
 public:
     //! parameterised constructor
     /*!
         @param s pointer to Strategy
     */
-    Rocket(LLStrategy*);
+    Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
     /**
      * @brief Destroy the Rocket object
      * Note All private members are deallocated
