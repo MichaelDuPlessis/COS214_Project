@@ -25,7 +25,7 @@ public:
 	 * @brief Construct a new Stage object
 	 * 
 	 */
-	Stage(Thruster *t);
+	Stage();
 
 	/**
 	 * @brief Destroy the Stage object
@@ -86,12 +86,26 @@ public:
 	 */
 	void notify();
 
+	/**
+	 * @brief Add Thruster object to current stage
+	 * 
+	 * @param[in]	 t 	The Thruster object that is to be added to the stage
+	 */
+	void addThruster(Thruster *t);
+
+	/**
+	 * @brief Remove Thruster object from current stage
+	 * 
+	 * @param[in]	 t 	The Thruster object that is to be removed from the stage
+	 */
+	void removeThruster(Thruster *t);
+
 private:
 	/**
-	 * @brief Thruster object
+	 * @brief Thruster object to store Thrusters that are part of current stage
 	 * 
 	 */
-	Thruster *thruster;
+	vector<Thruster *> thrusters;
 
 	/**
 	 * @brief String to indicate current warning status of the current stage
