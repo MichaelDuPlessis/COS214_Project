@@ -1,6 +1,6 @@
 #include "CrewDragon.h"
 
-CrewDragon::CrewDragon() {
+CrewDragon::CrewDragon() : Capsule("Crew Dragon") {
     crew.push_back(new Crew("John", "Doctor")); //add some basic crew
     crew.push_back(new Crew("Jane", "Technician"));
 }
@@ -25,3 +25,14 @@ void CrewDragon::unloadContents()
     std::cout << "Unloading Cargo from the CrewDragon Capsule\n";
 }
 
+bool CrewDragon::addCrew(Crew * person)
+{
+    if (crew.size() == capacity)
+    {
+        std::cout << "No more crew members can fit in this capsule\n";
+        return false;
+    }
+    std::cout << "Adding " << person->getName() << " \n";
+    crew.push_back(person);
+    return true;
+}

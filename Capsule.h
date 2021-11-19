@@ -11,10 +11,11 @@
 class Capsule 
 {
 private:
+    std::string name;
     Network * satStorage;
     const int capacity = 60;
 public:
-    Capsule();
+    Capsule(std::string);
     ~Capsule();
     virtual void unloadCrew();
     virtual void unloadContents() = 0;

@@ -12,10 +12,7 @@ class Aggregate
 	 	Aggregate();
 	 	virtual ~Aggregate();
 	 	virtual Iterator* createIterator() = 0;
-	 	std::vector<StarlinkSatellite*> getSatellites();
-	 	void addSatellite(StarlinkSatellite*);
-	 private:
-	 	std::vector<StarlinkSatellite*> satellites;
+	
 };
 
 #endif

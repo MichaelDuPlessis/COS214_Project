@@ -10,13 +10,14 @@ class CrewDragon : public Capsule
 {
 private:
     std::vector<Crew *> crew;
+    const int capacity = 8;
 public:
     CrewDragon();
     ~CrewDragon();
     void unloadCrew();
     void unloadContents();
 
-    void addCrew(Crew *);
+    bool addCrew(Crew *);
     Crew * getCrewAtIndex(int);
 };
 

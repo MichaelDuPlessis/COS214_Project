@@ -7,8 +7,6 @@ StarlinkSatellite::StarlinkSatellite()
     id = ++id;
 }
 
-StarlinkSatellite::StarlinkSatellite() {}
-
 StarlinkSatellite::~StarlinkSatellite() {}
 
 void StarlinkSatellite::communicateGround() 

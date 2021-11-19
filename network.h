@@ -9,10 +9,16 @@
 */
 class Network : public Aggregate
 {
-	 public:
-	 	Network();
-	 	~Network();
-	 	Iterator* createIterator();
+	private:
+		std::vector<StarlinkSatellite*> satellites;
+	public:
+		Network();
+		~Network();
+		Iterator* createIterator();
+		
+		int getSize();
+		std::vector<StarlinkSatellite*> getSatellites();
+	 	void addSatellite(StarlinkSatellite*);
 };
 
 #endif

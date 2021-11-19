@@ -2,7 +2,7 @@ all: *.o
 	g++ -o all *.o
 
 *.o: *.cpp
-	g++ -c *.cpp
+	g++ -c -g *.cpp
 
 run:
 	./all
