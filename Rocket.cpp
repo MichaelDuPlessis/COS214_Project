@@ -21,7 +21,7 @@ void Rocket::land()
     strategy->land();
 }
 
-*Rocket Rocket::getRocket() { this; }
+Rocket * Rocket::getRocket() { return this; }
 
 Rocket::~Rocket()
 {
@@ -45,12 +45,6 @@ void Rocket::setRState(RState* rState)
     this->capsule = rState->capsule;
     this->stages = rState->stages;
     this->target = rState->target;
-}
-
-Rocket* Rocket::clone()
-{
-    // todo once we have factories to make 
-    // copies of strategy and stage, maybe use clone witht them
 }
 
 void Rocket::setTarget(Network* target) { this->target = target; }

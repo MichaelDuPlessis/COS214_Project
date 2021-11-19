@@ -9,6 +9,7 @@
 #include "RState.h"
 #include "Stage.h"
 #include "Capsule.h"
+#include "network.h"
 
 
 using namespace std;
@@ -18,6 +19,8 @@ using namespace std;
  *  @author    Angela
  *  @date      November 2021
  */
+
+class RState;
 class Rocket
 {
 private:
@@ -91,13 +94,6 @@ public:
      */
     RState* createRState();
 
-    /**
-     * @brief Creates a clone of a Rocket
-     * 
-     * @return Rocket* 
-     * returns a copy of the Rocket
-     */
-    Rocket* clone();
     /**
      * @brief Set the Target object
      * 

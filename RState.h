@@ -4,6 +4,8 @@
 #include "Rocket.h"
 using namespace std;
 
+class Capsule;  class Stage; class Network;
+
 /**
  * @brief RState Class
  * @details This class represents the Memento participant of the Memento pattern
@@ -24,7 +26,7 @@ class RState {
          * @brief Private pointer variable to the capsule
          * 
          */
-        Capsule* capsule;
+        Capsule * capsule;
 
         /**
          * @brief Private vector holding the different stages of the Rocket
