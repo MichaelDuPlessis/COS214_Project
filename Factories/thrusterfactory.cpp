@@ -9,6 +9,12 @@ ThrusterFactory::ThrusterFactory()
 Thruster* ThrusterFactory::createCoreThruster() 
 {
     FalconCore* fc = new FalconCore(true);  // this core will delete its engines
+
+    for (int i = 0; i < 9; i++)
+    {
+        fc->addThruster(new Merlin());
+    }
+    
 }
 
 
