@@ -8,12 +8,14 @@
 */
 class Iterator
 {
-	 public:
-	 Iterator();
-	 virtual void first() = 0;
-	 virtual void next() = 0;
-	 virtual StarlinkSatellite* current() = 0; 
-	 virtual bool end() = 0;
+	public:
+	Iterator();
+	virtual ~Iterator();
+
+	virtual void first() = 0;
+	virtual void next() = 0;
+	virtual StarlinkSatellite* current() = 0; 
+	virtual bool end() = 0;
 
 };
 

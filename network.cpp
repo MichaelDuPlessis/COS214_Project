@@ -10,7 +10,7 @@ Network::~Network()
 	if(satellites.size() != 0)//avoid empty list
 	{
 		std::vector<StarlinkSatellite*>::iterator it = (satellites.begin());
-		for(it; it != (getSatellites()).end(); ++it)
+		for(; it != (getSatellites()).end(); ++it)
 		{
 			delete (*it);//potential error
 			(*it) = NULL;

@@ -16,7 +16,7 @@ private:
     /**     * @brief vector of Crew to be carried on this Capsule.     */
     std::vector<Crew *> crew;
     /**     * @brief the maximum capacity of Crew members available on this Capsule.    */
-    const int capacity = 8;
+    int capacity;
 public:
     /**     * @brief Constructor for a CrewDragon Capsule; invokes Capsule Constructor.   */
     CrewDragon();

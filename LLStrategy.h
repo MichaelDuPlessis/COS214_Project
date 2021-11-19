@@ -17,7 +17,9 @@ private:
 
 public:
     //! default constructor
-    LLStrategy() {}; 
+    LLStrategy() {};
+    //! default destructor
+    virtual ~LLStrategy() {};
     //! pure virtual function will be instatiated in concrete strategies
     virtual void launch() = 0; 
     //! pure virtual function will be instatiated in concrete strategies

@@ -17,9 +17,9 @@ private:
     /** @brief a string variable to store the Capsule name     */
     std::string name;
     /** @brief a Network object representing the StarlinkSatellite storage object on the Capsule     */
-    Network * satStorage = new Network();
+    Network satStorage;
     /** @brief the maximum capacity of the storage object     */
-    const int capacity = 60;
+    int capacity;
 public:
     /**
      * @brief constructor for a Capsule object
@@ -28,7 +28,7 @@ public:
      */
     Capsule(std::string name);
     /** @brief Destroy the Capsule object     */
-    ~Capsule();
+    virtual ~Capsule();
 
     /**
      *  @brief pure virtual function; unloads the Crew from the Capsule    

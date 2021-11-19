@@ -4,3 +4,8 @@ Iterator::Iterator()
 {
 	
 }
+
+Iterator::~Iterator()
+{
+	
+}

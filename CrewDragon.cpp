@@ -3,6 +3,7 @@
 CrewDragon::CrewDragon() : Capsule("Crew Dragon") {
     crew.push_back(new Crew("John", "Doctor")); //add some basic crew
     crew.push_back(new Crew("Jane", "Technician"));
+    this->capacity = 8;
 }
 
 CrewDragon::~CrewDragon() 

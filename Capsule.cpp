@@ -1,11 +1,12 @@
 #include "Capsule.h"
 
-Capsule::Capsule(std::string name) : name(name) {}
+Capsule::Capsule(std::string name) : name(name)
+{
+    this->capacity = 60;
+}
 
 Capsule::~Capsule() 
 {
-    delete satStorage;
-    satStorage = nullptr;
 }
 
 void Capsule::unloadCrew() 
@@ -25,7 +26,7 @@ void Capsule::dockToISS(Network * glbNetwork)
 void Capsule::deployToNetwork(Network * glbNetwork)
 {
     int count = 0;
-    Iterator * it = satStorage->createIterator();
+    Iterator * it = satStorage.createIterator();
     std::cout << "Deploying " << name << "'s Satellites to Global Netwwork: \n";
     for (it->first(); !it->end(); it->next())
     {   
@@ -33,20 +34,20 @@ void Capsule::deployToNetwork(Network * glbNetwork)
         glbNetwork->addSatellite(it->current());
     }
 
-    satStorage->clear();
+    satStorage.clear();
     delete it;
     
 }
 
 bool Capsule::addToNetwork(StarlinkSatellite * satellite)
 {
-    if (satStorage->getSize() == capacity)
+    if (satStorage.getSize() == capacity)
     {
         std::cout << "The satellite storage is maxed out on " << name << std::endl;
         return false;
     }
 
     std::cout << "The satellite " << satellite->getID() <<" has been added to the storage of " << name << std::endl;
-    satStorage->addSatellite(satellite);
+    satStorage.addSatellite(satellite);
     return true;
 }
