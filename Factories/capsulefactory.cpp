@@ -16,7 +16,7 @@ CD_CapsuleFactory::CD_CapsuleFactory()
 
 Capsule* CD_CapsuleFactory::buildCapsule() 
 {
-    
+    return new CrewDragon();
 }
 
 CD_CapsuleFactory::~CD_CapsuleFactory() 
@@ -33,7 +33,7 @@ C_CapsuleFactory::C_CapsuleFactory()
 
 Capsule* C_CapsuleFactory::buildCapsule() 
 {
-    
+    return new CrewDragon();
 }
 
 C_CapsuleFactory::~C_CapsuleFactory() 

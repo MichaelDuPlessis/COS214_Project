@@ -4,16 +4,16 @@
 #include <vector>
 #include <iostream>
 
-//#include "capsule.h"
+#include "../Capsule.h"
+#include "../Dragon.h"
+#include "../CrewDragon.h"
 
 using namespace std;
 
-class Capsule; // can delete later
+
 class Satellite;
 
 class CapsuleFactory{
-private:
-    vector<Satellite> satellites; 
 public:
     CapsuleFactory();
     virtual Capsule* buildCapsule() = 0;
