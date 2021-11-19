@@ -45,7 +45,6 @@ class RState {
          */
         RState();
 
-    public:
         /**
          * @brief Parametised constructer to a new RState object
          * 
@@ -55,6 +54,9 @@ class RState {
          * @param target 
          */
         RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, Network* target);
+
+    public:
+        
         ~RState(); 
 
        

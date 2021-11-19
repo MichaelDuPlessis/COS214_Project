@@ -47,33 +47,44 @@ private:
      */
     Rocket();
 public:
-    //! parameterised constructor
-    /*!
-        @param s pointer to Strategy
-    */
+    /**
+     * @brief Construct a new Rocket object
+     * 
+     * @param strategy 
+     * @param capsule 
+     * @param stages 
+     */
     Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
+
     /**
      * @brief Destroy the Rocket object
      * Note All private members are deallocated
      */
     ~Rocket();
+
     /**
      * @brief Get the Rocket object
      * 
      * @return Rocket* 
      */
     Rocket* getRocket();
+
     //! algorithms instatiated in rocket class, same algorithims in strategy classes
     void launch(); 
+
     //! algorithms instatiated in rocket class, same algorithims in strategy classes
     void land(); 
+    
     /**
-     * @brief sets rState to provided variable
+     * @brief reinstatiate Rocket with stored RState variables
      * 
      * @param rState 
      * the state that is used to instantiate the Rocket
      */
-    void setRState(RState rState);
+    void setRState(RState* rState);
+
+    RState* createRState();
+
     /**
      * @brief Creates a clone of a Rocket
      * 
