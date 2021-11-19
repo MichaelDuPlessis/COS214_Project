@@ -1,5 +1,5 @@
 #include "network.h"
-
+#include <iostream>
 Network::Network() : Aggregate()
 {
 	//For now empty
@@ -8,15 +8,15 @@ Network::Network() : Aggregate()
 Network::~Network()
 {
 	//Source for potential problem when implementations get joined together
-	if(satellites.size() != 0)//avoid empty list
-	{
-		std::vector<StarlinkSatellite*>::iterator it = (satellites.begin());
-		for(it; it != (getSatellites()).end(); ++it)
-		{
-			delete (*it);//potential error
-			(*it) = NULL;
-		} 
-	}
+	// if(satellites.size() != 0)//avoid empty list
+	// {
+	// 	std::vector<StarlinkSatellite*>::iterator it = (satellites.begin());
+	// 	for(it; it != (getSatellites()).end(); ++it)
+	// 	{
+	// 		delete (*it);//potential error
+	// 		(*it) = NULL;
+	// 	} 
+	// }
 }
 /**
 	*@return
@@ -48,7 +48,12 @@ void Network::addSatellite(StarlinkSatellite* e)
 
 int Network::getSize() 
 {
-	return satellites.size();
+	if (satellites.empty())
+		return 0;
+	else return satellites.size();
 }
 
-
+void Network::clear() 
+{
+	satellites.clear();
+}

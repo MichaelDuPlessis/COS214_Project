@@ -27,6 +27,14 @@ void SatelliteIterator::next()
 }
 
 /**
+ 	*Performs a check to determine if at end of list
+*/
+bool SatelliteIterator::end()
+{
+	return (currentPos == list.size());
+}
+
+/**
 	*current returns the current item.
 	* returns null if we have reached the end of the list
 */

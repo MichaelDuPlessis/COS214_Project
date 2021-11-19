@@ -11,7 +11,7 @@ class Aggregate
 	 public:
 	 	Aggregate();
 	 	virtual ~Aggregate();
-	 	virtual Iterator* createIterator() = 0;
+	 	virtual Iterator * createIterator() = 0;
 	
 };
 

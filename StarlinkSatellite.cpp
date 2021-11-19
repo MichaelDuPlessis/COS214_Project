@@ -1,22 +1,21 @@
 #include "StarlinkSatellite.h"
+#include <iostream>
 
-int StarlinkSatellite::id = 0;
-
-StarlinkSatellite::StarlinkSatellite()
-{
-    id = ++id;
-}
+StarlinkSatellite::StarlinkSatellite(int id) : id(id) {} 
 
 StarlinkSatellite::~StarlinkSatellite() {}
 
 void StarlinkSatellite::communicateGround() 
 {
-    // std::cout 
+    
 }
 
-void StarlinkSatellite::communicateSatellite() {}
+void StarlinkSatellite::communicateSatellite() 
+{
+    
+}
 
 int StarlinkSatellite::getID() 
 {
-    return id;
+    return this->id;
 }

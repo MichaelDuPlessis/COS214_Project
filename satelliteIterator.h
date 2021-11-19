@@ -14,6 +14,7 @@ class SatelliteIterator : public Iterator
 		void first();
 		void next();
 		StarlinkSatellite* current();
+		bool end();
 	private:
 		std::vector<StarlinkSatellite*> list;
 		int currentPos;

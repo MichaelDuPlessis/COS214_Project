@@ -21,36 +21,28 @@ void Capsule::dockToISS(Network * glbNetwork)
 void Capsule::deployToNetwork(Network * glbNetwork)
 {
     int count = 0;
-    std::vector<StarlinkSatellite *>::iterator it;
+    Iterator * it = satStorage->createIterator();
     std::cout << "Deploying " << name << "'s Satellites to Global Netwwork: \n";
-    for (it = satStorage->getSatellites().begin(); it != satStorage->getSatellites().end(); it++)
+    for (it->first(); !it->end(); it->next())
     {   
-        if (it == satStorage->getSatellites().end())
-            std::cout << "Deployed Satellite with ID: " << (*it)->getID() << ".\n";
-        else std::cout << "Deployed Satellite with ID: " << (*it)->getID() << ", ";
-        delete (*it);
-
-        if (count % 10 == 0)
-            std::cout << std::endl;
-        count++;
+        std::cout << "Deployed Satellite with ID: " << it->current()->getID() << "\n";
+        glbNetwork->addSatellite(it->current());
     }
+
+    satStorage->clear();
+    delete it;
     
-    std::cout << satStorage->getSatellites().size() << " - satStorage Size Size\n";
 }
 
 bool Capsule::addToNetwork(StarlinkSatellite * satellite)
 {
-    if (satStorage->getSize() == 0)
-    {
-        satStorage->addSatellite(satellite);
-        return true;
-    }
     if (satStorage->getSize() == capacity)
     {
         std::cout << "The satellite storage is maxed out on " << name << std::endl;
         return false;
     }
 
+    std::cout << "The satellite " << satellite->getID() <<" has been added to the storage of " << name << std::endl;
     satStorage->addSatellite(satellite);
     return true;
 }

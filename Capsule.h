@@ -12,7 +12,7 @@ class Capsule
 {
 private:
     std::string name;
-    Network * satStorage;
+    Network * satStorage = new Network();
     const int capacity = 60;
 public:
     Capsule(std::string);

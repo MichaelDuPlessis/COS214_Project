@@ -10,8 +10,9 @@
 class Network : public Aggregate
 {
 	private:
-		std::vector<StarlinkSatellite*> satellites;
+		std::vector<StarlinkSatellite *> satellites;
 	public:
+		std::vector<int> test;
 		Network();
 		~Network();
 		Iterator* createIterator();
@@ -19,6 +20,7 @@ class Network : public Aggregate
 		int getSize();
 		std::vector<StarlinkSatellite*> getSatellites();
 	 	void addSatellite(StarlinkSatellite*);
+		void clear();
 };
 
 #endif

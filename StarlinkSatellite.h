@@ -6,9 +6,9 @@
 class StarlinkSatellite
 {
 private:
-    static int id;   
+    int id;   
 public:
-    StarlinkSatellite();
+    StarlinkSatellite(int);
     ~StarlinkSatellite();
     int getID();
     void communicateSatellite();
