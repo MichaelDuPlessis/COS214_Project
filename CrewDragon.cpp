@@ -28,3 +28,9 @@ void CrewDragon::dockToISS()
     for (int i=0; i<=crew.size(); i++)
         crew.pop_back();
 }
+
+std::vector<Crew *> CrewDragon::getCrew()
+{    return crew;   }
+
+void CrewDragon::setCrew(std::vector<Crew *> inCrew) 
+{   crew = inCrew;  }

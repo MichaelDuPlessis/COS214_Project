@@ -5,20 +5,18 @@
 #include <vector>
 #include <iostream>
 
-#include "aggregate.h"
+#include "network.h"
 
 
-class Capsule : public aggregate
+class Capsule 
 {
-private:
-
 public:
     Capsule();
     ~Capsule();
     virtual void printCrew() = 0;
-    // virtual void printSatellites() = 0;
     virtual void dockToISS() = 0;
-
+    virtual Capsule * clone() = 0;
+    virtual void deployNetwork() = 0;
 };
 
 #endif

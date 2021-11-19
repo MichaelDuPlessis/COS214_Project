@@ -1,16 +1,18 @@
 #ifndef STARLINKSATELLITE_H
 #define STARLINKSATELLITE_H
 
+#include <string>
+
 class StarlinkSatellite
 {
 private:
-    int id;   
+    static int id;   
 public:
-    StarlinkSatellite(/* args */);
+    StarlinkSatellite();
     ~StarlinkSatellite();
+    int getID();
     void communicateSatellite();
     void communicateGround();
-
 
 };
 

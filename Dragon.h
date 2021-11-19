@@ -5,8 +5,6 @@
 
 class Dragon : public Capsule
 {
-private:
-    
 public:
     Dragon();
     ~Dragon();
