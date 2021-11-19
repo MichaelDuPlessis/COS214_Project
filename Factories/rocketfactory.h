@@ -1,16 +1,13 @@
 #ifndef ROCKETFACTORY_H
 #define ROCKETFACTORY_H
 
-//#include "stagefactory.h"
-//#include "capsulefactory.h"
-//#include "rocket.h"
+#include "stagefactory.h"
+#include "capsulefactory.h"
 
 //#include "capsule.h"
 //#include "stage.h"
 
-class StageFactory;
-class CapsuleFactory;
-class Rocket; 
+
 
 using namespace std;
 
