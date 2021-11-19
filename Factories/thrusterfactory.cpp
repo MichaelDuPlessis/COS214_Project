@@ -15,6 +15,7 @@ Thruster* ThrusterFactory::createCoreThruster()
         fc->addThruster(new Merlin());
     }
     
+    return fc;
 }
 
 
