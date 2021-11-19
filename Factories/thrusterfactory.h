@@ -1,6 +1,8 @@
 #ifndef THRUSTERFACTORY_H
 #define THRUSTERFACTORY_H
 
+#include <iostream>
+
 using namespace std;
 
 #include "../thruster.h"
@@ -14,6 +16,8 @@ public:
     ThrusterFactory();
     Thruster* createCoreThruster();
     Thruster* createVaccumeThruster();
+
+    Thruster* customThrustor(bool hascore, int decorated, int engines);
     ~ThrusterFactory();
 };
 

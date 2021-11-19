@@ -8,22 +8,37 @@ ThrusterFactory::ThrusterFactory()
 
 Thruster* ThrusterFactory::createCoreThruster() 
 {
-    FalconCore* fc = new FalconCore(true);  // this core will delete its engines
+    return customThrustor(true,0,9);
+}
 
-    for (int i = 0; i < 9; i++)
+ThrusterFactory::createVaccumeThruster() 
+{
+    return customThrustor(true,1,1); 
+}
+
+Thruster* ThrusterFactory::customThrustor(bool hascore, int decorated, int engines){
+    Thruster* thrustor;
+    
+    if(hascore){
+        thrustor = new FalconCore(true); 
+    }
+    else{
+        thrustor =  new Merlin();
+        if(engines <= decorated)  thrustor =  Vacuum(thuster, true);                     // add decorator 
+
+        return thruster
+    }
+
+    for (int i = 0; i < engines; i++)
     {
-        fc->addThruster(new Merlin());
+        Thurster* engine = new Merlin();
+        if(i <decorated)  engine = new Vacuum(engin, true);                     // add decorator 
+
+        thrustor->addThruster(new Merlin());
     }
     
-    return fc;
+    return thruster
 }
-
-
-Thruster* ThrusterFactory::createVaccumeThruster() 
-{
-    return new Vaccuum(new Merlin(), true); // this vaccum whats attached to it
-}
-
 ThrusterFactory::~ThrusterFactory() 
 {
     cout << "Thruster Factory Destroyed" << endl;
