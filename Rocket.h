@@ -28,6 +28,7 @@ public:
         @param s pointer to Strategy
     */
     Rocket(LLStrategy*);
+    Rocket* getRocket();
     //! algorithms instatiated in rocket class, same algorithims in strategy classes
     void launch(); 
     //! algorithms instatiated in rocket class, same algorithims in strategy classes

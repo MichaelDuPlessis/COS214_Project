@@ -30,3 +30,5 @@ void Rocket::launch() {
 void Rocket::land() {
     strategy->land();
 }
+
+*Rocket Rocket::getRocket() { this; }
