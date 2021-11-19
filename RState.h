@@ -1,8 +1,7 @@
 #ifndef RSTATE_H 
 #define RSTATE_H
 
-#include <iostream>
-#include "State.h"
+#include "Rocket.h"
 using namespace std;
 
 /**
@@ -11,30 +10,54 @@ using namespace std;
  * 
  */
 class RState {
+    ///Adding Rocket class as friend in order to access private member variables
+    friend class Rocket;
+
     private:
-       /**
-        * @brief private State object variable
-        * 
-        */
-       State state;
+        /**
+         * @brief Private pointer variable to the Strategy that will be used
+         * 
+         */
+        LLStrategy* strategy;
+
+        /**
+         * @brief Private pointer variable to the capsule
+         * 
+         */
+        Capsule* capsule;
+
+        /**
+         * @brief Private vector holding the different stages of the Rocket
+         * 
+         */
+        vector<Stage*> stages;
+
+        /**
+         * @brief Private pointer variable to the target network to deliver to (eg. global network)
+         * 
+         */
+        Network* target;
+
+        /**
+         * @brief Construct a new RState object
+         * Private to ensure base contructor can't be called
+         * 
+         */
+        RState();
 
     public:
-        RState();
+        /**
+         * @brief Parametised constructer to a new RState object
+         * 
+         * @param strategy 
+         * @param capsule 
+         * @param stages 
+         * @param target 
+         */
+        RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, Network* target);
         ~RState(); 
 
-        /**
-         * @brief Get the State object
-         * 
-         * @return State 
-         */
-        State getState();
-
-        /**
-         * @brief Set the State object
-         * 
-         * @param state 
-         */
-        void setState(State state);
+       
 
        
     

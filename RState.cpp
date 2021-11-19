@@ -2,12 +2,10 @@
 #include <iostream>
 using namespace std;
 
-State RState::getState()
+RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, Network* target)
 {
-    return this->state;
-}
-
-void RState::setState(State state)
-{
-    this->state = state;
+    this->strategy = strategy;
+    this->capsule = capsule;
+    this->stages = stages;
+    this->target = target;
 }
