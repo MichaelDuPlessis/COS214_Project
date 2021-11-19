@@ -22,7 +22,11 @@ private:
     const int capacity = 60;
 public:
     /**
+<<<<<<< HEAD
      * @brief constructor for a Capsule object
+=======
+     * @brief construct a Capsule object
+>>>>>>> Satellites
      * @param name
      * set the name of the Capsule to the parameter
      */

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 .vscode/settings.json
 *.o
+=======
+* .o
+>>>>>>> Satellites
 main
