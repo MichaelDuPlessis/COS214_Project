@@ -4,6 +4,8 @@
 
 using namespace std;
 
+Network* MasterNetwork::nw;
+
 MasterNetwork::MasterNetwork(){
     nw = new Network();
 }
@@ -36,4 +38,15 @@ void MasterNetwork::clearNetwork()
 {
     delete nw;
     nw = new Network();
+}
+
+void MasterNetwork::communicate(){
+    Iterator * it = nw->createIterator();
+    for (it->first(); !it->end(); it->next())
+    {   
+        it->current()->communicateGround();
+        it->current()->communicateSatellite();
+    }
+
+    delete it;
 }

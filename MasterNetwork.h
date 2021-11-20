@@ -9,18 +9,18 @@
 class MasterNetwork {
 
   public:
-      /**
-        * @brief Gets singleton or instantiates it if non exists
-        * @return The Master Network
-      */
+    /**
+      * @brief Gets singleton or instantiates it if non exists
+      * @return The Master Network
+    */
 	  static MasterNetwork* instance();
-        /**
-          * @return The network list of the MasterNetwork
-        */
+    /**
+      * @return The network list of the MasterNetwork
+    */
     Network* network();
-        /**
-          * @param[out] deletes network and then instantiates a new one
-        */
+    /**
+      * @param[out] deletes network and then instantiates a new one
+    */
     void clearNetwork();
 
     /**
@@ -29,6 +29,12 @@ class MasterNetwork {
      * @return int 
      */
     static int getID();
+
+    /**
+     * @brief calls the satellites communicate methods
+     * 
+     */
+    static void communicate();
     
   protected:
       /**
@@ -46,7 +52,7 @@ class MasterNetwork {
       /**
         * @brief the network list
       */
-    Network* nw; 
+    static Network* nw; 
 
       /**
         * @brief pointer to master netwrok
