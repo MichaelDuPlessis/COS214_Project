@@ -9,11 +9,11 @@ RocketFactory::RocketFactory()
     CDFact = new CD_CapsuleFactory();
     CFact = new C_CapsuleFactory();
 
-    cout << "Rocket Facotry Created" << endl;
+    // cout << "Rocket Facotry Created" << endl;
 }
 
 RocketFactory::RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleFactory *d){
-    cout << "Rocket Facotry Created" << endl;
+    // cout << "Rocket Facotry Created" << endl;
     StgFact = sf;
     CDFact = cd;
     CFact = d;
@@ -71,7 +71,7 @@ RocketFactory::~RocketFactory(){
     delete CDFact;
     delete CFact ;
 
-    cout << "Rocket Facotry Destroyed" << endl;
+    // cout << "Rocket Facotry Destroyed" << endl;
 }
 
 

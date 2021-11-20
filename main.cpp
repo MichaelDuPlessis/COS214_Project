@@ -41,7 +41,7 @@ int main()
     cout << "Welcome to the SpaceX Launch Simulation\n";
     cout << "You will be required to make as many test rockets as you want to launc\n";
 
-    cout << "Type 'done' at any point to end the construction of Rockets";
+    cout << "Type 'done' at any point to end the construction of Rockets\n\n";
     // need to check done after eveery function call
     while (!done)
     {
@@ -79,14 +79,11 @@ int main()
         }
 
         // setting sats if any
-        if (crew)
+        setSat(rocket);
+        if (done)
         {
-            setSat(rocket);
-            if (done)
-            {
-                delete rocket;
-                continue;
-            }
+            delete rocket;
+            continue;
         }
 
         // saving rocket
@@ -125,9 +122,13 @@ void setSat(Rocket* rocket)
         if (checkIfNum(input))
         {
             int sat = stoi(input);
-            if (sat <= 60 && sat >= 0)
-                for (; sat >= 0; sat--)
+            if (sat <= 60 && sat >= 0) {
+                for (; sat > 0; sat--)
                     rocket->addPayload(satelliteFactory.createSatellite());
+                    
+                return;
+            }
+
         }
 
         // if none of the if statments triggered than cleary there was an error in input
@@ -147,8 +148,8 @@ void setCrew(Rocket* rocket)
         if (checkIfNum(input))
         {
             int crew = stoi(input);
-            if (crew <= 7 && crew >= 0)
-                for (; crew >= 0; crew--)
+            if (crew <= 7 && crew >= 0) {
+                for (; crew > 0; crew--)
                 {
                     string name, spec;
                     cout << "What is the crew members name: ";
@@ -158,6 +159,9 @@ void setCrew(Rocket* rocket)
 
                     rocket->addCrew(new Crew(name, spec));
                 }
+
+                return;
+            }
         }
 
         // if none of the if statments triggered than cleary there was an error in input

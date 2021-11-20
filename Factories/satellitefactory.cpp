@@ -3,7 +3,7 @@
 
 SatelliteFactory::SatelliteFactory() 
 {
-    cout << "Satellite Factory Created" << endl;
+    // cout << "Satellite Factory Created" << endl;
 }
 
 StarlinkSatellite* SatelliteFactory::createSatellite() 
@@ -14,5 +14,5 @@ StarlinkSatellite* SatelliteFactory::createSatellite()
 
 SatelliteFactory::~SatelliteFactory() 
 {
-    cout << "Satellite Factory Destroyed" << endl;
+    // cout << "Satellite Factory Destroyed" << endl;
 }

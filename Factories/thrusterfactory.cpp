@@ -3,7 +3,7 @@
 
 ThrusterFactory::ThrusterFactory()
 {
-    cout << "Thruster Factory Created" << endl;
+    // cout << "Thruster Factory Created" << endl;
 }
 
 Thruster* ThrusterFactory::createCoreThruster() 
@@ -41,7 +41,7 @@ Thruster* ThrusterFactory::customThrustor(bool hascore, int decorated, int engin
 }
 ThrusterFactory::~ThrusterFactory() 
 {
-    cout << "Thruster Factory Destroyed" << endl;
+    // cout << "Thruster Factory Destroyed" << endl;
 }
 
 

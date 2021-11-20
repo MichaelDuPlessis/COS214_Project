@@ -7,12 +7,12 @@ using namespace std;
 
 Stage::Stage()
 {
-	cout << "New Stage Created!" << endl;
+	// cout << "New Stage Created!" << endl;
 }
 
 Stage::~Stage()
 {
-	cout << "Stage Destroyed!" << endl;
+	// cout << "Stage Destroyed!" << endl;
 	for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
         delete (*itr);
 }
@@ -49,13 +49,13 @@ void Stage::detach(StageObserver *obs)
 			this->stageObservers.erase(it--);
 	}
 
-	cout << "Observer detached!" << endl;
+	// cout << "Observer detached!" << endl;
 }
 
 void Stage::attach(StageObserver *obs)
 {
 	this->stageObservers.push_back(obs);
-	cout << "New Observer attached!" << endl;
+	// cout << "New Observer attached!" << endl;
 }
 
 void Stage::land()
@@ -73,7 +73,7 @@ void Stage::notify()
 	{
 
 		(*it)->update();
-		cout << "Observer notified!" << endl;
+		// cout << "Observer notified!" << endl;
 	}
 }
 

@@ -14,8 +14,8 @@ Command::Command(Rocket* input)
 }
 Command::~Command()
 {
-	if(this->rocket != NULL)
-		delete rocket;
+	// if(this->rocket != NULL)
+	// 	delete rocket;
 }
 
 /**

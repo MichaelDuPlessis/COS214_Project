@@ -3,18 +3,18 @@
 
 StageFactory::StageFactory()
 {
-    cout << "Created Stage Factory" << endl;
+    // cout << "Created Stage Factory" << endl;
 }
 
 StageFactory::~StageFactory()
 {
     delete thrusterFactory;
-    cout << "Destoyed Stage Factory" << endl;
+    // cout << "Destoyed Stage Factory" << endl;
 }
 
 StageFactory::StageFactory(ThrusterFactory* t) 
 {
-    cout << "Created Stage Factory" << endl;
+    // cout << "Created Stage Factory" << endl;
     thrusterFactory = t;
 }
 
