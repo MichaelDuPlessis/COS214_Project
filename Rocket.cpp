@@ -79,3 +79,19 @@ void Rocket::clear()
     this->capsule = nullptr;
     this->stages.clear();
 }
+
+bool Rocket::setStageWarning(string w, int pos)
+{
+    if (pos < 0 || pos >= this->stages.size())
+        return false;
+
+    this->stages[pos]->setWarning(w);
+}
+
+bool Rocket::updateStageObs(int pos)
+{
+    if (pos < 0 || pos >= this->stages.size())
+        return false;
+
+    this->stages[pos]->notify();
+}

@@ -151,5 +151,30 @@ public:
      * 
      */
     void clear();
+
+    /**
+     * @brief sets a warning for a the stage
+     * 
+     * @param w 
+     * @param pos 
+     * w is the warning
+     * pos is the stage
+     * 
+     * @return true
+     * @return false
+     * true means stage exists while false the opposite
+     */
+    bool setStageWarning(string w, int pos);
+
+    /**
+     * @brief tells a specific stage to update
+     * 
+     * @param pos 
+     * 
+     * @return true
+     * @return false
+     * true means stage exists while false the opposite
+     */
+    bool updateStageObs(int pos);
 };
 #endif
