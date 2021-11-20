@@ -83,6 +83,12 @@ public:
     bool addPayload(StarlinkSatellite * satellite);
 
     /**
+     * @brief deletes all satellites in rocket
+     * 
+     */
+    void removePayoad();
+
+    /**
      * @brief adds crew to rockets capsule if possible
      * 
      * @param satellite 

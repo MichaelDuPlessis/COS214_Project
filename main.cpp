@@ -24,6 +24,8 @@ void setCrew(Rocket* rocket);
 void remCrew(Rocket* rocket);
 // creates the sattellites
 void setSat(Rocket* rocket);
+// removes all satellites
+void remSat(Rocket* rocket);
 // what rocket to modify rocket
 int modify(map<string, int> rockets);
 // modifies rocket
@@ -60,6 +62,11 @@ int main()
         int mod = -1;
         if (rockets.size() > 0)
             mod = modify(rockets);
+
+        if (done)
+        {
+            continue;
+        }
 
         if (mod >= 0) // if modifying a rocket
         {
@@ -112,10 +119,13 @@ int main()
         }
 
         // saving rocket
-        hanger.addMemento(rocket->createRState());
+        if (rocket)
+        {
+            hanger.addMemento(rocket->createRState());
 
-        cout << "Rocket stored in hanger\n";
-        rockets.insert(pair<string, int>(rocket->getName(), numRockets++));           
+            cout << "Rocket stored in hanger\n";
+            rockets.insert(pair<string, int>(rocket->getName(), numRockets++));           
+        }
     }
 
     // launchind landing the rockets
@@ -131,7 +141,7 @@ int main()
         launch.launch();
         land.setRocket(rocket);
         land.land();
-        cout << "======launching finished======\n\n";
+        cout << "\n======launching finished======\n\n";
 
         delete rocket;
     }
@@ -154,8 +164,10 @@ void modRocket(Rocket* rocket)
         cout << "Are you sure (y/n): ";
         cin >> input;
 
-        if (input == "y")
+        if (input == "y") {
             delete rocket;
+            rocket = nullptr;
+        }
     }
     else if (input == "crew")
     {
@@ -175,6 +187,24 @@ void modRocket(Rocket* rocket)
                 remCrew(rocket);
         }
     }
+    else if (input == "satellites")
+    {
+        cout << "Would you like to add or remove satellites (add/rem): ";
+        cin >> input;
+
+        if (input == "add")
+        {
+            setSat(rocket);
+        }
+        if (input == "rem")
+        {
+            cout << "Are you sure, this will delete all satellites (y/n): ";
+            cin >> input;
+
+            if (input == "y")
+                remSat(rocket);
+        }
+    }
 }
 
 int modify(map<string, int> rockets)
@@ -182,6 +212,12 @@ int modify(map<string, int> rockets)
     string input;
     cout << "Would you like to modify a rocket (y/n): ";
     cin >> input;
+
+    if (input == "end")
+    {
+        done = true;
+        return -1;
+    }
 
     if (input == "y")
         while (true)
@@ -216,7 +252,11 @@ void setSat(Rocket* rocket)
             int sat = stoi(input);
             if (sat <= 60 && sat >= 0) {
                 for (; sat > 0; sat--)
-                    rocket->addPayload(satelliteFactory.createSatellite());
+                    if (!rocket->addPayload(satelliteFactory.createSatellite()))
+                    {
+                        cout << "Cargo is full\n";
+                        break;
+                    }
                     
                 return;
             }
@@ -225,6 +265,11 @@ void setSat(Rocket* rocket)
         // if none of the if statments triggered than cleary there was an error in input
         invalidInput();
     }
+}
+
+void remSat(Rocket* rocket)
+{
+    rocket->removePayoad();
 }
 
 void setCrew(Rocket* rocket)

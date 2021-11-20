@@ -75,6 +75,12 @@ public:
      * 
      */
     virtual void removeCrew();
+
+    /**
+     * @brief removes all satellites
+     * 
+     */
+    void removeSatellites();
 };
 
 #endif

@@ -7,6 +7,11 @@ Capsule::Capsule(std::string name) : name(name)
 
 Capsule::~Capsule() 
 {
+    Iterator * it = satStorage.createIterator();
+    for (it->first(); !it->end(); it->next())
+        delete it->current();
+
+    delete it;
 }
 
 // should never be called in this class
@@ -59,3 +64,8 @@ bool Capsule::addToNetwork(StarlinkSatellite * satellite)
 }
 
 void Capsule::removeCrew() {}
+
+void Capsule::removeSatellites()
+{
+    this->satStorage.clear();
+}

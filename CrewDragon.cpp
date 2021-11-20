@@ -1,8 +1,6 @@
 #include "CrewDragon.h"
 
 CrewDragon::CrewDragon() : Capsule("Crew Dragon") {
-    crew.push_back(new Crew("John", "Doctor")); //add some basic crew
-    crew.push_back(new Crew("Jane", "Technician"));
     this->capacity = 8;
 }
 
@@ -11,11 +9,10 @@ CrewDragon::~CrewDragon()
     if (crew.size() != 0)
     {
         std::vector<Crew *>::iterator it;
-
+        std::cout << "---------------------------------------------\n";
         for (it = crew.begin(); it != crew.end(); it++)
             delete (*it);
             (*it) = nullptr;
-
     }
 }
 
@@ -30,6 +27,7 @@ void CrewDragon::unloadCrew()
     }
     
     std::cout << crew.size() << " - Crew Size\n";
+    crew.clear();
 }
 
 void CrewDragon::unloadContents()
