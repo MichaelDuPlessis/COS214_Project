@@ -1,5 +1,6 @@
 #include "rocketfactory.h"
-
+#include "../Falcon9Strategy.h"
+#include "../FalconHeavyStrategy.h"
 
 RocketFactory::RocketFactory() 
 {
@@ -20,7 +21,7 @@ RocketFactory::RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleF
 }
 //====================================================================================================================//
 
-Rocket* RocketFactory::buildFalconHeavy(LLStrategy* strat, bool crewdragon = true){
+Rocket* RocketFactory::buildFalconHeavy(bool crewdragon = true){
     vector<Stage*> stages;
     Capsule* c = builldCapsule(crewdragon);
 
@@ -33,12 +34,12 @@ Rocket* RocketFactory::buildFalconHeavy(LLStrategy* strat, bool crewdragon = tru
     s = StgFact->createSmallStage();
     stages.push_back(s);
 
-    return new Rocket(strat, c, stages);
+    return new Rocket(new FalconHeavyStrategy(), c, stages);
 
 }
 //====================================================================================================================//
 
-Rocket* RocketFactory::buildFalcon9(LLStrategy* strat, bool crewdragon = true){
+Rocket* RocketFactory::buildFalcon9(bool crewdragon = true){
 
     vector<Stage*> stages;
     Capsule* c = builldCapsule(crewdragon);
@@ -52,7 +53,7 @@ Rocket* RocketFactory::buildFalcon9(LLStrategy* strat, bool crewdragon = true){
     s = StgFact->createSmallStage();
     stages.push_back(s);
 
-    return new Rocket(strat, c, stages);
+    return new Rocket(new Falcon9Strategy(), c, stages);
 }
 //====================================================================================================================//
 

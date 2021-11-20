@@ -13,7 +13,7 @@ Thruster* ThrusterFactory::createCoreThruster()
 
 Thruster* ThrusterFactory::createVaccumeThruster() 
 {
-    return customThrustor(true,1,1); 
+    return customThrustor(false,1,1); 
 }
 
 Thruster* ThrusterFactory::customThrustor(bool hascore, int decorated, int engines){

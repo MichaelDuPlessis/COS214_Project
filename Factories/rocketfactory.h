@@ -25,8 +25,8 @@ private:
 public:
     RocketFactory();
     RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleFactory *d);
-    Rocket* buildFalconHeavy(LLStrategy* s, bool crewdragon);
-    Rocket* buildFalcon9(LLStrategy* s, bool crewdragon);
+    Rocket* buildFalconHeavy(bool crewdragon);
+    Rocket* buildFalcon9(bool crewdragon);
 
     Capsule* builldCapsule(bool crewdragon = true);
     ~RocketFactory();

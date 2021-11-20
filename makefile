@@ -3,7 +3,7 @@ all:
 	g++ -c Factories/*.cpp
 	g++ -o main *.o
 
-run: all
+run:
 	./main
 
 clean:
