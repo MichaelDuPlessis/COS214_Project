@@ -69,6 +69,12 @@ public:
      * @return false 
      */
     virtual bool addCrew(Crew *);
+
+    /**
+     * @brief removes all crew, should never do anything unless crew dragon
+     * 
+     */
+    virtual void removeCrew();
 };
 
 #endif

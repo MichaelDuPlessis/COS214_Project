@@ -43,14 +43,6 @@ class Hanger {
          * return is based on whether the vector is empty or not, and whether a valid index was supplied
          */
         RState* getMemento(int index);
-
-        /**
-         * @brief Get the Memento object by name
-         * 
-         * @param name 
-         * @return RState* 
-         */
-        RState* getMemento(string name);
 };
 
 #endif

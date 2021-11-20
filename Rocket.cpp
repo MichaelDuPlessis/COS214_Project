@@ -68,3 +68,5 @@ bool Rocket::addCrew(Crew* crew)
 void Rocket::setName(string name) { this->name = name; }
 
 string Rocket::getName() { return this->name; }
+
+void Rocket::removeCrew() { this->capsule->removeCrew(); }

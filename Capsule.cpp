@@ -57,3 +57,5 @@ bool Capsule::addToNetwork(StarlinkSatellite * satellite)
     satStorage.addSatellite(satellite);
     return true;
 }
+
+void Capsule::removeCrew() {}

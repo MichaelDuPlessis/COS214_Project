@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <map>
 #include "Factories/rocketfactory.h"
 #include "Factories/satellitefactory.h"
 #include "Hanger.h"
@@ -19,8 +20,14 @@ string getName();
 bool hasCrew();
 // sets the crew
 void setCrew(Rocket* rocket);
+// removes crew
+void remCrew(Rocket* rocket);
 // creates the sattellites
 void setSat(Rocket* rocket);
+// what rocket to modify rocket
+int modify(map<string, int> rockets);
+// modifies rocket
+void modRocket(Rocket* rocket);
 
 // helpers
 bool checkIfNum(string &str);
@@ -37,6 +44,8 @@ int main()
     Hanger hanger;
     // number of rockets created
     int numRockets = 0;
+    // map of name to int
+    map<string, int> rockets;
 
     // greeting text for the user
     cout << "Welcome to the SpaceX Launch Simulation\n";
@@ -46,7 +55,20 @@ int main()
     // need to check done after eveery function call
     while (!done)
     {
-        // getting rocket name
+        // asking if a rocket should be modified
+        int mod = -1;
+        if (rockets.size() > 0)
+            mod = modify(rockets);
+
+        if (mod >= 0) // if modifying a rocket
+        {
+            Rocket* rocket = new Rocket(hanger.getMemento(mod));
+
+            modRocket(rocket);
+        }
+        else // if adding new rocket
+        {
+         // getting rocket name
         string name = getName();
         if (done)
         {
@@ -87,27 +109,29 @@ int main()
             continue;
         }
 
+        }
+
         // saving rocket
         hanger.addMemento(rocket->createRState());
 
         cout << "Rocket stored in hanger\n";
-        numRockets++;
+        rockets.insert(pair<string, int>(name, numRockets++));           
     }
 
     // launchind landing the rockets
-    cout << "======Launching Rockets======\n\n"
+    cout << "======Launching Rockets======\n\n";
 
     Launch launch;
     Land land;
     for (int i = 0; i < numRockets; i++)
     {
         Rocket* rocket = new Rocket(hanger.getMemento());
-        cout << "======" << rocket->getName() << " is launching======\n\n"
+        cout << "======" << rocket->getName() << " is launching======\n\n";
         launch.setRocket(rocket);
         launch.launch();
         land.setRocket(rocket);
         land.land();
-        cout << "======" << " launching finished======\n\n"
+        cout << "======launching finished======\n\n";
 
         delete rocket;
     }
@@ -116,6 +140,63 @@ int main()
     MasterNetwork::instance()->communicate();
 
     return 0;
+}
+
+void modRocket(Rocket* rocket)
+{
+    string input;
+    cout << "What would you like to modify of the Rocket (kind, crew, satellites): ";
+    cin >> input;
+
+    if (input == "kind")
+    {
+        cout << "This will delete the whole rocket and ask you to make a new one\n";
+        cout << "Are you sure (y/n): ";
+        cin >> input;
+
+        if (input == "y")
+            delete rocket;
+    }
+    else if (input == "crew")
+    {
+        cout << "Would you like to add or remove crew (add/rem): ";
+        cin >> input;
+
+        if (input == "add")
+        {
+            setCrew(rocket);
+        }
+        if (input == "rem")
+        {
+            cout << "Are you sure, this will delete all crew (y/n): ";
+            cin >> input;
+
+            if (intput == "y")
+                remCrew(rocket);
+        }
+    }
+}
+
+int modify(map<string, int> rockets)
+{
+    string input;
+    cout << "Would you like to modify a rocket (y/n): ";
+    cin >> input;
+
+    if (input == "y")
+        while (true)
+        {
+            cout << "What rocket would you like to modify: ";
+            cin >> input;
+
+            if (rockets.count(input) > 0)
+            {
+                return rockets[input];
+            }
+
+            // if none of the if statments triggered than cleary there was an error in input
+            cout << "No rocket with such name exists\n";
+        }
 }
 
 void setSat(Rocket* rocket)
@@ -137,7 +218,6 @@ void setSat(Rocket* rocket)
                     
                 return;
             }
-
         }
 
         // if none of the if statments triggered than cleary there was an error in input
@@ -166,7 +246,11 @@ void setCrew(Rocket* rocket)
                     cout << "What is the crew members specialisation: ";
                     cin >> spec;
 
-                    rocket->addCrew(new Crew(name, spec));
+                    if (!rocket->addCrew(new Crew(name, spec)))
+                    {
+                        cout << "Capsule is full\n";
+                        break;
+                    }
                 }
 
                 return;
@@ -176,6 +260,11 @@ void setCrew(Rocket* rocket)
         // if none of the if statments triggered than cleary there was an error in input
         invalidInput();
     }
+}
+
+void remCrew(Rocket* rocket)
+{
+    rocket->removeCrew();
 }
 
 bool hasCrew()

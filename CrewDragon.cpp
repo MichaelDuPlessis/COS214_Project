@@ -48,3 +48,5 @@ bool CrewDragon::addCrew(Crew * person)
     crew.push_back(person);
     return true;
 }
+
+void CrewDragon::removeCrew() { this->crew.clear(); }

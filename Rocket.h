@@ -90,6 +90,12 @@ public:
      * @return false 
      */
     bool addCrew(Crew* crew);
+    
+    /**
+     * @brief removes all crew
+     * 
+     */
+    void removeCrew();
 
     /**
      * @brief Get the Rocket object

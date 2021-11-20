@@ -38,6 +38,12 @@ public:
      * return value on whether the Crew member was successfully added to the vector
      */
     bool addCrew(Crew *);
+
+    /**
+     * @brief removes all crew
+     * 
+     */
+    void removeCrew();
 };
 
 

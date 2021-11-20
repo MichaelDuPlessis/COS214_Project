@@ -32,5 +32,4 @@ RState* Hanger::getMemento(int index)
         storage.erase(storage.begin() + index);
         return temp;
     }
-    
 }
