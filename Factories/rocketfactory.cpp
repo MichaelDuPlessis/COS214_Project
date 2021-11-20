@@ -21,7 +21,7 @@ RocketFactory::RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleF
 }
 //====================================================================================================================//
 
-Rocket* RocketFactory::buildFalconHeavy(bool crewdragon = true){
+Rocket* RocketFactory::buildFalconHeavy(string name, bool crewdragon = true){
     vector<Stage*> stages;
     Capsule* c = builldCapsule(crewdragon);
 
@@ -34,12 +34,12 @@ Rocket* RocketFactory::buildFalconHeavy(bool crewdragon = true){
     s = StgFact->createSmallStage();
     stages.push_back(s);
 
-    return new Rocket(new FalconHeavyStrategy(), c, stages);
+    return new Rocket(new FalconHeavyStrategy(), c, stages, name);
 
 }
 //====================================================================================================================//
 
-Rocket* RocketFactory::buildFalcon9(bool crewdragon = true){
+Rocket* RocketFactory::buildFalcon9(string name, bool crewdragon = true){
 
     vector<Stage*> stages;
     Capsule* c = builldCapsule(crewdragon);
@@ -53,7 +53,7 @@ Rocket* RocketFactory::buildFalcon9(bool crewdragon = true){
     s = StgFact->createSmallStage();
     stages.push_back(s);
 
-    return new Rocket(new Falcon9Strategy(), c, stages);
+    return new Rocket(new Falcon9Strategy(), c, stages, name);
 }
 //====================================================================================================================//
 

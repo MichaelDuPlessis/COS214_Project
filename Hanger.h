@@ -47,7 +47,13 @@ class Hanger {
          */
         RState* getMemento(int index);
 
-    
+        /**
+         * @brief Get the Memento object by name
+         * 
+         * @param name 
+         * @return RState* 
+         */
+        RState* getMemento(string name);
 };
 
 #endif

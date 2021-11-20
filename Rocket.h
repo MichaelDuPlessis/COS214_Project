@@ -39,6 +39,12 @@ private:
      * 
      */
     Capsule* capsule;
+
+    /**
+     * @brief the name of the rocket
+     * 
+     */
+    string name;
     /**
      * @brief Construct a new Rocket object
      * to insure that the base constructor cannot be called
@@ -52,7 +58,7 @@ public:
      * @param capsule 
      * @param stages 
      */
-    Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
+    Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, string name);
 
     /**
      * @brief Destroy the Rocket object
@@ -106,5 +112,19 @@ public:
      * The newly created memento
      */
     RState* createRState();
+
+    /**
+     * @brief Set the Name object
+     * 
+     * @param name 
+     */
+    void setName(string name);
+
+    /**
+     * @brief Get the Name object
+     * 
+     * @return string 
+     */
+    string getName();
 };
 #endif

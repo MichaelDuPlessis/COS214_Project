@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Rocket::Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages) : strategy(strategy), capsule(capsule), stages(stages) {}
+Rocket::Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, string name) : strategy(strategy), capsule(capsule), stages(stages), name(name) {}
 
 void Rocket::launch() 
 {
@@ -55,3 +55,7 @@ bool Rocket::addCrew(Crew* crew)
 {
     return this->capsule->addCrew(crew);
 }
+
+void Rocket::setName(string name) { this->name = name; }
+
+string Rocket::getName() { return this->name; }

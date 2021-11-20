@@ -35,6 +35,12 @@ class RState {
         vector<Stage*> stages;
 
         /**
+         * @brief the name of the Rocket
+         * 
+         */
+        string name;
+
+        /**
          * @brief Construct a new RState object
          * Private to ensure base contructor can't be called
          * 
@@ -49,7 +55,7 @@ class RState {
          * @param stages 
          * @param target 
          */
-        RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages);
+        RState(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, string name);
 
     public:
         
