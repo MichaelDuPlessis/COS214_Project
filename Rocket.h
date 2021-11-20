@@ -176,5 +176,13 @@ public:
      * true means stage exists while false the opposite
      */
     bool updateStageObs(int pos);
+
+    /**
+     * @brief check is any of the observers have a warning
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool canLaunch();
 };
 #endif

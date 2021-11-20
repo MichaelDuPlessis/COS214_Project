@@ -86,6 +86,7 @@ bool Rocket::setStageWarning(string w, int pos)
         return false;
 
     this->stages[pos]->setWarning(w);
+    return true;
 }
 
 bool Rocket::updateStageObs(int pos)
@@ -94,4 +95,14 @@ bool Rocket::updateStageObs(int pos)
         return false;
 
     this->stages[pos]->notify();
+    return true;
+}
+
+bool Rocket::canLaunch()
+{
+    for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
+        if ((*itr)->isProblem())
+            return false;
+
+    return true;
 }

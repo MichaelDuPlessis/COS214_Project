@@ -34,6 +34,13 @@ public:
 	 */
 	void update();
 
+	/**
+	 * @brief Get the warning var
+	 * 
+	 * @return string 
+	 */
+	string getWarning();
+
 private:
 	/**
 	 * @brief string value of warning message of observed subject

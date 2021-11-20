@@ -30,6 +30,8 @@ void remSat(Rocket* rocket);
 int modify(map<string, int> rockets);
 // modifies rocket
 void modRocket(Rocket* rocket);
+// adds warnings to stages
+void stageWarn(Rocket* rocket);
 
 // helpers
 bool checkIfNum(string &str);
@@ -140,12 +142,19 @@ int main()
     for (int i = 0; i < numRockets; i++)
     {
         Rocket* rocket = new Rocket(hanger.getMemento());
-        cout << "======" << rocket->getName() << " is launching======\n\n";
-        launch.setRocket(rocket);
-        launch.launch();
-        land.setRocket(rocket);
-        land.land();
-        cout << "\n======launching finished======\n\n";
+        if (rocket->canLaunch())
+        {
+            cout << "======" << rocket->getName() << " is launching======\n\n";
+            launch.setRocket(rocket);
+            launch.launch();
+            land.setRocket(rocket);
+            land.land();
+            cout << "\n======launching finished======\n\n";
+        }
+        else
+        {
+            cout << rocket->getName() << " is un able to launch due to a problem with on of the stages\n\n";
+        }
 
         delete rocket;
     }
@@ -154,6 +163,36 @@ int main()
     MasterNetwork::instance()->communicate();
 
     return 0;
+}
+
+void stageWarn(Rocket* rocket)
+{
+    string input;
+    cout << "Would you like to add a warning to a stage (y/n): ";
+    cin >> input;
+
+    if (input == "y")
+        while (true)
+        {
+            cout << "What stage would you like to add a warning too: ";
+            cin >> input;
+
+            if (checkIfNum(input))
+            {
+                int num = stoi(input);
+
+                if (rocket->setStageWarning("problem", num))
+                {
+                    rocket->updateStageObs(num);
+                    return;
+                } 
+                else
+                    cout << "No such stage exists\n";
+            } 
+            else // if none of the if statments triggered than cleary there was an error in input
+                invalidInput();
+            
+        }
 }
 
 void modRocket(Rocket* rocket)

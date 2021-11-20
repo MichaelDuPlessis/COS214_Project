@@ -93,6 +93,15 @@ public:
 	 */
 	void addThruster(Thruster* thruster);
 
+	/**
+	 * @brief checks if any observer has a problem
+	 * 
+	 * @return true 
+	 * @return false 
+	 * true there is a problem false otherwise
+	 */
+	bool isProblem();
+
 private:
 	/**
 	 * @brief Thruster object

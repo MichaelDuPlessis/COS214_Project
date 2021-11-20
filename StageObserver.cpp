@@ -25,3 +25,5 @@ void StageObserver::update()
 
 	cout << "Observer warning message updated: " << oldWarning << " -> " << this->warning << endl;
 }
+
+string StageObserver::getWarning() { return this->warning; }
