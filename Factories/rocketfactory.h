@@ -32,7 +32,7 @@ private:
 public:
     /** 
      * @brief Rocket Factory Constructor. 
-     * @param[out] creates all required factories for a rocketfactory
+     * @param[out] Factories creates all required factories for a rocketfactory
      */
     RocketFactory();
 
