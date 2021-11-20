@@ -6,6 +6,7 @@
 #include "Rocket.h"
 #include "launch.h"
 #include "land.h"
+#include "MasterNetwork.h"
 
 using namespace std;
 
@@ -93,18 +94,26 @@ int main()
         numRockets++;
     }
 
+    // launchind landing the rockets
+    cout << "======Launching Rockets======\n\n"
+
     Launch launch;
     Land land;
     for (int i = 0; i < numRockets; i++)
     {
         Rocket* rocket = new Rocket(hanger.getMemento());
+        cout << "======" << rocket->getName() << " is launching======\n\n"
         launch.setRocket(rocket);
         launch.launch();
         land.setRocket(rocket);
         land.land();
+        cout << "======" << " launching finished======\n\n"
 
         delete rocket;
     }
+
+    // communicating globally
+    MasterNetwork::instance()->communicate();
 
     return 0;
 }
