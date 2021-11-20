@@ -9,9 +9,18 @@
 #include "land.h"
 #include "MasterNetwork.h"
 
+#include "thruster_unittest.cpp"
+#include <gtest/gtest.h>
+
 using namespace std;
 
-// building rocket
+int main(int argc, char **argv) 
+{   
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+   
+}
+/*// building rocket
 // creating rocket
 Rocket* getRocket(string name, bool crew);
 // asks for name of rocket
@@ -41,6 +50,7 @@ void invalidInput();
     
 // boolean whether the user is done making rockets
 bool done = false;
+
 
 int main()
 {
@@ -437,3 +447,4 @@ void invalidInput(){
 bool checkIfNum(string &str){
     return str.find_first_not_of("0123456789") == std::string::npos;
 }
+*/
