@@ -22,6 +22,8 @@ private:
     CapsuleFactory* CFact;
     CapsuleFactory* CDFact;
 
+    void addObservers(vector<Stage*> stages);
+
 public:
     RocketFactory();
     RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleFactory *d);
@@ -33,4 +35,3 @@ public:
 };
 
 #endif // ROCKETFACTORY_H
-

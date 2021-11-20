@@ -1,6 +1,7 @@
 #include "rocketfactory.h"
 #include "../Falcon9Strategy.h"
 #include "../FalconHeavyStrategy.h"
+#include "../StageObserver.h"
 
 RocketFactory::RocketFactory() 
 {
@@ -34,6 +35,8 @@ Rocket* RocketFactory::buildFalconHeavy(string name, bool crewdragon = true){
     s = StgFact->createSmallStage();
     stages.push_back(s);
 
+    this->addObservers(stages);
+
     return new Rocket(new FalconHeavyStrategy(), c, stages, name);
 
 }
@@ -52,6 +55,8 @@ Rocket* RocketFactory::buildFalcon9(string name, bool crewdragon = true){
 ////// create second stage //////////////////////////////////
     s = StgFact->createSmallStage();
     stages.push_back(s);
+
+    this->addObservers(stages);
 
     return new Rocket(new Falcon9Strategy(), c, stages, name);
 }
@@ -74,4 +79,14 @@ RocketFactory::~RocketFactory(){
     // cout << "Rocket Facotry Destroyed" << endl;
 }
 
+void RocketFactory::addObservers(vector<Stage*> stages)
+{
+    vector<StageObserver*> obs;
 
+    for (std::vector<Stage*>::iterator itr = stages.begin(); itr != stages.end(); itr++)
+        obs.push_back(new StageObserver(*itr));
+
+    for (std::vector<StageObserver*>::iterator itr1 = obs.begin(); itr1 != obs.end(); itr1++)
+        for (std::vector<Stage*>::iterator itr2 = stages.begin(); itr2 != stages.end(); itr2++)
+            (*itr2)->attach(*itr1);
+}
