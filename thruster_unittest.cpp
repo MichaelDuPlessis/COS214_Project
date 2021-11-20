@@ -9,7 +9,7 @@ namespace {
     FalconCore* thruster = new FalconCore();
     Merlin* merlinEngine = new Merlin();
 
-    //Tests that more than one engine can't be added to a Thruster
+    //Tests that the same merlin engine can't be added to a singular Thruster
     //Testing the postcondition: Check that function returns false when engine is already added to Thruster
     TEST(AddThrusterTest, Negative) {
     //this test belongs to the AddThrusterTest case.
@@ -25,7 +25,7 @@ namespace {
 
     //Tests positive result
     TEST(AddThrusterTest, Positive) {
-        EXPECT_TRUE(thruster->addThruster(merlinEngine));
+        EXPECT_TRUE(thruster->addThruster(new Merlin()));
     }
 
 

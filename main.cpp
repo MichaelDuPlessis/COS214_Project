@@ -10,6 +10,7 @@
 #include "MasterNetwork.h"
 
 #include "thruster_unittest.cpp"
+#include "stage_unittest.cpp"
 #include <gtest/gtest.h>
 
 using namespace std;
