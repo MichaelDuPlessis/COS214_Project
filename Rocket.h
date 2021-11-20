@@ -61,6 +61,13 @@ public:
     Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, string name);
 
     /**
+     * @brief Construct a new Rocket object from a memento
+     * 
+     * @param state 
+     */
+    Rocket(RState* rState);
+
+    /**
      * @brief Destroy the Rocket object
      * Note All private members are deallocated
      */

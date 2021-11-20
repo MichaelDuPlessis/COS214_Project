@@ -1,5 +1,7 @@
 #include "launch.h"
 
+Launch::Launch() {}
+
 /**
 	*@brief
 	* 		A pointer to an instatiated Rocket must be passed to constructor.

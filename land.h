@@ -6,6 +6,7 @@
 class Land : public Command
 {
 	 public:
+	 	Land();
 	 	Land(Rocket*);
 	 	void launch();
 	 	void land();

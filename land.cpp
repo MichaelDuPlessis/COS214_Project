@@ -1,5 +1,7 @@
 #include "land.h"
 
+Land::Land() {}
+
 Land::Land(Rocket* r) : Command(r)
 {}
 

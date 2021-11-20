@@ -1,5 +1,7 @@
 #include "command.h"
 
+Command::Command() {};
+
 /**
 	*@brief
 	* 		create a command interface for an existing rocket

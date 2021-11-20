@@ -15,6 +15,7 @@ class Command
 	private:
 		Rocket* rocket;
 	public:
+		Command();
 		Command(Rocket* );
 		virtual ~Command();
 		virtual void launch() = 0;

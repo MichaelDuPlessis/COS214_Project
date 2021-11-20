@@ -19,10 +19,7 @@ class Hanger {
          */
         vector<RState*> storage;
 
-    public:
-        Hanger();
-        ~Hanger(); 
-        
+    public: 
         /**
          * @brief function to add a memento
          * 

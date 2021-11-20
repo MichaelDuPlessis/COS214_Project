@@ -4,6 +4,14 @@ using namespace std;
 
 Rocket::Rocket(LLStrategy* strategy, Capsule* capsule, vector<Stage*> stages, string name) : strategy(strategy), capsule(capsule), stages(stages), name(name) {}
 
+Rocket::Rocket(RState* rState)
+{
+    this->strategy = rState->strategy;
+    this->capsule = rState->capsule;
+    this->stages = rState->stages;
+    this->name = rState->name;
+}
+
 void Rocket::launch() 
 {
     strategy->launch(); //calling concrete strategy launch and land, client chooses which rocket
@@ -36,7 +44,7 @@ Rocket::~Rocket()
 
 RState* Rocket::createRState()
 {
-    return new RState(this->strategy, this->capsule, this->stages);
+    return new RState(this->strategy, this->capsule, this->stages, this->name);
 }
 
 void Rocket::setRState(RState* rState)
@@ -44,6 +52,7 @@ void Rocket::setRState(RState* rState)
     this->strategy = rState->strategy;
     this->capsule = rState->capsule;
     this->stages = rState->stages;
+    this->name = rState->name;
 }
 
 bool Rocket::addPayload(StarlinkSatellite * satellite) 
