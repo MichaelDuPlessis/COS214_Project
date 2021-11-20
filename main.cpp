@@ -55,6 +55,7 @@ int main()
     // need to check done after eveery function call
     while (!done)
     {
+        Rocket* rocket;
         // asking if a rocket should be modified
         int mod = -1;
         if (rockets.size() > 0)
@@ -62,38 +63,47 @@ int main()
 
         if (mod >= 0) // if modifying a rocket
         {
-            Rocket* rocket = new Rocket(hanger.getMemento(mod));
+            rocket = new Rocket(hanger.getMemento(mod));
 
             modRocket(rocket);
         }
         else // if adding new rocket
         {
-         // getting rocket name
-        string name = getName();
-        if (done)
-        {
-            continue;
-        }
+            // getting rocket name
+            string name = getName();
+            if (done)
+            {
+                continue;
+            }
 
-        // getting crew
-        bool crew = hasCrew();
-        if (done)
-        {
-            continue;
-        }
+            // getting crew
+            bool crew = hasCrew();
+            if (done)
+            {
+                continue;
+            }
 
-        // asking for rocket type
-        Rocket* rocket = getRocket(name, crew);
-        if (done)
-        {
-            delete rocket;
-            continue;
-        }
+            // asking for rocket type
+            rocket = getRocket(name, crew);
+            if (done)
+            {
+                delete rocket;
+                continue;
+            }
 
-        // getting crew if any
-        if (crew)
-        {
-            setCrew(rocket);
+            // getting crew if any
+            if (crew)
+            {
+                setCrew(rocket);
+                if (done)
+                {
+                    delete rocket;
+                    continue;
+                }
+            }
+
+            // setting sats if any
+            setSat(rocket);
             if (done)
             {
                 delete rocket;
@@ -101,21 +111,11 @@ int main()
             }
         }
 
-        // setting sats if any
-        setSat(rocket);
-        if (done)
-        {
-            delete rocket;
-            continue;
-        }
-
-        }
-
         // saving rocket
         hanger.addMemento(rocket->createRState());
 
         cout << "Rocket stored in hanger\n";
-        rockets.insert(pair<string, int>(name, numRockets++));           
+        rockets.insert(pair<string, int>(rocket->getName(), numRockets++));           
     }
 
     // launchind landing the rockets
@@ -171,7 +171,7 @@ void modRocket(Rocket* rocket)
             cout << "Are you sure, this will delete all crew (y/n): ";
             cin >> input;
 
-            if (intput == "y")
+            if (input == "y")
                 remCrew(rocket);
         }
     }
@@ -197,6 +197,8 @@ int modify(map<string, int> rockets)
             // if none of the if statments triggered than cleary there was an error in input
             cout << "No rocket with such name exists\n";
         }
+
+    return -1;
 }
 
 void setSat(Rocket* rocket)
