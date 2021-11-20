@@ -145,5 +145,11 @@ public:
      * @return string 
      */
     string getName();
+
+    /**
+     * @brief sets all vars to null so that when it is deleted nothing else is too
+     * 
+     */
+    void clear();
 };
 #endif

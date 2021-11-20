@@ -72,3 +72,10 @@ string Rocket::getName() { return this->name; }
 void Rocket::removeCrew() { this->capsule->removeCrew(); }
 
 void Rocket::removePayoad() { this->capsule->removeSatellites(); }
+
+void Rocket::clear()
+{
+    this->strategy = nullptr;
+    this->capsule = nullptr;
+    this->stages.clear();
+}

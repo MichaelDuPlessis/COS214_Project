@@ -125,6 +125,10 @@ int main()
 
             cout << "Rocket stored in hanger\n";
             rockets.insert(pair<string, int>(rocket->getName(), numRockets++));           
+            
+            // this is to make sure that there are not memory leaks
+            rocket->clear();
+            delete rocket;
         }
     }
 
