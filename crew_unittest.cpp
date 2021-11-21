@@ -14,7 +14,7 @@ namespace
     for (int i = 0; i < 10; i++)
         crewMembers[i] = new Crew("TestCrewMember", "TestSpecialisation");
 
-    CrewDragon *cd1 = new CrewDragon(stage);
+    CrewDragon *cd1 = new CrewDragon();
 
     /**
      * @brief Construct a new TEST object to test that true is returned when crew members are added while the crew dragon has space
@@ -50,4 +50,11 @@ namespace
         EXPECT_FALSE(cd1->addCrew(crewMembers[8]);
         EXPECT_FALSE(cd1->addCrew(crewMembers[9]);
     }
+
+    delete cd1;
+
+    for (int a = 0; a < 10; a++)
+        delete crewMembers[a];
+
+    delete[] crewMembers;
 }
