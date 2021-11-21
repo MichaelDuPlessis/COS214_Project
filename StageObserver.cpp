@@ -8,12 +8,12 @@ StageObserver::StageObserver(Stage *s)
 {
 	this->subject = s;
 	this->warning = "none";
-	cout << "New StageObserver Created!" << endl;
+	// cout << "New StageObserver Created!" << endl;
 }
 
 StageObserver::~StageObserver()
 {
-	cout << "StageObserver Destroyed!" << endl;
+	// cout << "StageObserver Destroyed!" << endl;
 }
 
 void StageObserver::update()
