@@ -42,12 +42,13 @@ void invalidInput();
 // boolean whether the user is done making rockets
 bool done = false;
 
+// number of rockets created
+int numRockets = 0;
+
 int main()
 {
     // caretaker
     Hanger hanger;
-    // number of rockets created
-    int numRockets = 0;
     // map of name to int
     map<string, int> rockets;
 
@@ -156,7 +157,7 @@ int main()
         }
         else
         {
-            cout << rocket->getName() << " is un able to launch due to a problem with on of the stages\n\n";
+            cout << rocket->getName() << " is unable to launch due to a problem with on of the stages\n\n";
         }
 
         delete rocket;
@@ -213,15 +214,17 @@ void modRocket(Rocket* rocket)
 
         if (input == "y") {
             if (rocket->getStrategy() == "F9") {
-                cout << "Changing to Falcon Heavy";
+                cout << "Changing to Falcon Heavy\n";
                 Capsule* temp = rocket->getCapsuleNull();
                 string name = rocket->getName();
 
+                cout << "here\n";
                 delete rocket;
+                cout << "here\n";
                 rocket = rocketFactory.buildFalconHeavy(name, false);
                 rocket->replaceCapsule(temp);
             } else {
-                cout << "Changing to Falcon 9";
+                cout << "Changing to Falcon 9\n";
                 Capsule* temp = rocket->getCapsuleNull();
                 string name = rocket->getName();
 
@@ -267,6 +270,8 @@ void modRocket(Rocket* rocket)
                 remSat(rocket);
         }
     }
+
+    numRockets--;
 }
 
 int modify(map<string, int> rockets)
