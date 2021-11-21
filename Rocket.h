@@ -185,5 +185,19 @@ public:
      * @return false 
      */
     bool canLaunch();
+
+    /**
+     * @brief Set the Strategy object and deletes the old one
+     * 
+     * @param strat 
+     */
+    void setStrategy(LLStrategy* strat);
+
+    /**
+     * @brief Get the strategy type
+     * 
+     * @return string 
+     */
+    string getStrategy();
 };
 #endif

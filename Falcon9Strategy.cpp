@@ -9,3 +9,5 @@ void Falcon9Strategy::launch() {
 void Falcon9Strategy::land() {
     cout << "Falcon Nine is Landing. " << endl;
 }
+
+string Falcon9Strategy::getKind() { return "F9"; }

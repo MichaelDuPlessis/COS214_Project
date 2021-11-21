@@ -23,6 +23,8 @@ public:
     //! pure virtual function will be instatiated in concrete strategies
     virtual void launch() = 0; 
     //! pure virtual function will be instatiated in concrete strategies
-    virtual void land() = 0; 
+    virtual void land() = 0;
+    //! get the kind of strategy
+    virtual string getKind() = 0;
 };
 #endif

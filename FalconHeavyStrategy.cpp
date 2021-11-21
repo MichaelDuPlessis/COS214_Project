@@ -8,5 +8,6 @@ void FalconHeavyStrategy::launch() {
 }
 void FalconHeavyStrategy::land() {
     cout << "Falcon Heavy is Landing. " << endl;
-
 }
+
+string FalconHeavyStrategy::getKind() { return "FH"; }

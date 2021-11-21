@@ -115,3 +115,11 @@ bool Rocket::canLaunch()
 
     return true;
 }
+
+void Rocket::setStrategy(LLStrategy* strat)
+{
+    delete strat;
+    this->strategy = strat;
+}
+
+string Rocket::getStrategy() { this->strategy->getKind(); }

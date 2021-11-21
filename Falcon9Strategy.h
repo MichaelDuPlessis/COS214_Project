@@ -21,5 +21,7 @@ public:
     void launch();
     //! instatiated algorithm from base class
     void land();
+    //! get the name of the strategy
+    string getKind();
 };
 #endif
