@@ -101,3 +101,7 @@ bool Stage::isProblem()
 
 	return false;
 }
+
+int Stage::getNumThrusters(){
+	return thrusters.size();
+}

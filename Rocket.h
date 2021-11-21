@@ -184,5 +184,13 @@ public:
      * @return false 
      */
     bool canLaunch();
+
+
+    /**
+     * @brief access to the rockets stages
+     * 
+     * @return vector<Stage*> 
+     */
+    vector<Stage*> getStages();
 };
 #endif

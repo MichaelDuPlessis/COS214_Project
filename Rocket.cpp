@@ -106,3 +106,7 @@ bool Rocket::canLaunch()
 
     return true;
 }
+
+vector<Stage*> Rocket::getStages(){
+    return stages;
+}
