@@ -1,3 +1,6 @@
+#include "Stage.h"
+#include "Falcon9Strategy.h"
+#include "CrewDragon.h"
 #include "Rocket.h"
 #include <vector>
 #include "gtest/gtest.h"
@@ -18,7 +21,7 @@ namespace
     stageList.push_back(s2);
 
     LLStrategy *str = new Falcon9Strategy();
-    Capsule *c = new Capsule("Test Capsule");
+    Capsule *c = new CrewDragon();
 
     Rocket *r = new Rocket(str, c, stageList, "TestRocket");
 
@@ -115,11 +118,4 @@ namespace
         r->setStageWarning("none", 1);
         EXPECT_TRUE(r->canLaunch());
     }
-
-    delete r;
-    delete c;
-    delete str;
-    stageList.clear();
-    delete s1;
-    delete s2;
 }

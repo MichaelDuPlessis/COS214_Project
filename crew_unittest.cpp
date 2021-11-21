@@ -12,7 +12,9 @@ namespace
     Crew **crewMembers = new Crew *[10];
 
     for (int i = 0; i < 10; i++)
+    {
         crewMembers[i] = new Crew("TestCrewMember", "TestSpecialisation");
+    }
 
     CrewDragon *cd1 = new CrewDragon();
 
@@ -51,10 +53,4 @@ namespace
         EXPECT_FALSE(cd1->addCrew(crewMembers[9]);
     }
 
-    delete cd1;
-
-    for (int a = 0; a < 10; a++)
-        delete crewMembers[a];
-
-    delete[] crewMembers;
 }
