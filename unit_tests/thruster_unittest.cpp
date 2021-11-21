@@ -1,6 +1,6 @@
-#include "thruster.h"
-#include "FalconCore.h"
-#include "Merlin.h"
+#include "../thruster.h"
+#include "../FalconCore.h"
+#include "../merlin.h"
 #include "gtest/gtest.h"
 
 namespace {

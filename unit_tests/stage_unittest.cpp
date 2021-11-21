@@ -1,5 +1,5 @@
-#include "Stage.h"
-#include "StageObserver.h"
+#include "../Stage.h"
+#include "../StageObserver.h"
 #include "gtest/gtest.h"
 
 namespace {

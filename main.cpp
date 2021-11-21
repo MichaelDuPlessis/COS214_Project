@@ -9,10 +9,10 @@
 #include "land.h"
 #include "MasterNetwork.h"
 
-#include "thruster_unittest.cpp"
-#include "stage_unittest.cpp"
-//#include "crew_unittest.cpp"
-//#include "rocket_unittest.cpp"
+#include "unit_tests/thruster_unittest.cpp"
+#include "unit_tests/stage_unittest.cpp"
+#include "unit_tests/crew_dragon_unittest.cpp"
+#include "unit_tests/rocket_unittest.cpp"
 #include <gtest/gtest.h>
 
 using namespace std;
