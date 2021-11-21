@@ -33,9 +33,12 @@ Rocket * Rocket::getRocket() { return this; }
 
 Rocket::~Rocket()
 {
-    delete this->capsule;
+    if (this->capsule)
+        delete this->capsule;
     this->capsule = nullptr;
-    delete this->strategy;
+
+    if (this->strategy)
+        delete this->strategy;
     this->strategy = nullptr;
 
     if (stages.size() > 0)
@@ -118,8 +121,26 @@ bool Rocket::canLaunch()
 
 void Rocket::setStrategy(LLStrategy* strat)
 {
-    delete strat;
+    if (this->strategy)
+        delete this->strategy;
     this->strategy = strat;
 }
 
-string Rocket::getStrategy() { this->strategy->getKind(); }
+string Rocket::getStrategy() { return this->strategy->getKind(); }
+
+Capsule* Rocket::getCapsule() { return this->capsule; }
+
+Capsule* Rocket::getCapsuleNull()
+{
+    Capsule* temp = this->capsule;
+    this->capsule = nullptr;
+    return temp;
+}
+
+void Rocket::replaceCapsule(Capsule* cap)
+{
+    if (this->capsule)
+        delete this->capsule;
+
+    this->capsule = cap;
+}

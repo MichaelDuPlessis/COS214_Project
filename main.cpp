@@ -200,19 +200,35 @@ void stageWarn(Rocket* rocket)
 
 void modRocket(Rocket* rocket)
 {
+    RocketFactory rocketFactory;
+
     string input;
     cout << "What would you like to modify of the Rocket (kind, crew, satellites): ";
     cin >> input;
 
     if (input == "kind")
     {
-        cout << "This will delete the whole rocket and ask you to make a new one\n";
         cout << "Are you sure (y/n): ";
         cin >> input;
 
         if (input == "y") {
-            delete rocket;
-            rocket = nullptr;
+            if (rocket->getStrategy() == "F9") {
+                cout << "Changing to Falcon Heavy";
+                Capsule* temp = rocket->getCapsuleNull();
+                string name = rocket->getName();
+
+                delete rocket;
+                rocket = rocketFactory.buildFalconHeavy(name, false);
+                rocket->replaceCapsule(temp);
+            } else {
+                cout << "Changing to Falcon 9";
+                Capsule* temp = rocket->getCapsuleNull();
+                string name = rocket->getName();
+
+                delete rocket;
+                rocket = rocketFactory.buildFalcon9(name, false);
+                rocket->replaceCapsule(temp);
+            }
         }
     }
     else if (input == "crew")

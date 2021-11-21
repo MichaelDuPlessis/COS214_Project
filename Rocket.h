@@ -199,5 +199,26 @@ public:
      * @return string 
      */
     string getStrategy();
+
+    /**
+     * @brief Gets the capsule;
+     * 
+     * @return Capsule* 
+     */
+    Capsule* getCapsule();
+
+    /**
+     * @brief Gets the capsule and sets it to null;
+     * 
+     * @return Capsule* 
+     */
+    Capsule* getCapsuleNull();
+
+    /**
+     * @brief replaces the capsule and deletes the old one
+     * 
+     * @param cap 
+     */
+    void replaceCapsule(Capsule* cap);
 };
 #endif
