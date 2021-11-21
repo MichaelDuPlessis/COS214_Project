@@ -8,29 +8,29 @@
 namespace
 {
     /**
-     * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
-     * 
-     */
-
-    Stage *s1 = new Stage();
-    Stage *s2 = new Stage();
-
-    vector<Stage *> stageList;
-
-    stageList.push_back(s1);
-    stageList.push_back(s2);
-
-    LLStrategy *str = new Falcon9Strategy();
-    Capsule *c = new CrewDragon();
-
-    Rocket *r = new Rocket(str, c, stageList, "TestRocket");
-
-    /**
-     * @brief Construct a new TEST object to test that false is returned when warning updated for a stage - invalid position entered
-     * 
-     */
+    * @brief Construct a new TEST object to test that false is returned when warning updated for a stage - invalid position entered
+    * 
+    */
     TEST(RocketTest, setWarningInvalidPos)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect false to be returned
          * 
@@ -41,11 +41,29 @@ namespace
     }
 
     /**
-     * @brief Construct a new TEST object to test that true is returned when warning updated for a stage - valid position entered
-     * 
-     */
+    * @brief Construct a new TEST object to test that true is returned when warning updated for a stage - valid position entered
+    * 
+    */
     TEST(RocketTest, setWarningValidPos)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect true to be returned
          * 
@@ -56,11 +74,29 @@ namespace
     }
 
     /**
-     * @brief Construct a new TEST object to test that false is returned when observers notified - invalid position entered
-     * 
-     */
+    * @brief Construct a new TEST object to test that false is returned when observers notified - invalid position entered
+    * 
+    */
     TEST(RocketTest, notifyInvalidPos)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect false to be returned
          * 
@@ -71,11 +107,29 @@ namespace
     }
 
     /**
-     * @brief Construct a new TEST object to test that false is returned when observers notified - invalid position entered
-     * 
-     */
+    * @brief Construct a new TEST object to test that false is returned when observers notified - invalid position entered
+    * 
+    */
     TEST(RocketTest, notifyValidPos)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect true to be returned
          * 
@@ -89,11 +143,29 @@ namespace
     }
 
     /**
-     * @brief Construct a new TEST object to test that false is returned when checking if rocket can launch when warning exists on stage
-     * 
-     */
+    * @brief Construct a new TEST object to test that false is returned when checking if rocket can launch when warning exists on stage
+    * 
+    */
     TEST(RocketTest, cantLaunch)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect false to be returned
          * 
@@ -104,11 +176,29 @@ namespace
     }
 
     /**
-     * @brief Construct a new TEST object to test that true is returned when checking if rocket can launch when no warning exists on stage
-     * 
-     */
+    * @brief Construct a new TEST object to test that true is returned when checking if rocket can launch when no warning exists on stage
+    * 
+    */
     TEST(RocketTest, canLaunch)
     {
+        /**
+         * @brief Unit Test for setting a stage warning, updating stage observers and determining whether rocket can proceed with launching 
+         * 
+         */
+
+        Stage *s1 = new Stage();
+        Stage *s2 = new Stage();
+
+        vector<Stage *> stageList;
+
+        stageList.push_back(s1);
+        stageList.push_back(s2);
+
+        LLStrategy *str = new Falcon9Strategy();
+        Capsule *c = new CrewDragon();
+
+        Rocket *r = new Rocket(str, c, stageList, "TestRocket");
+
         /**
          * @brief Expect true to be returned
          * 
