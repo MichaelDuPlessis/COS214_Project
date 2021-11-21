@@ -101,3 +101,13 @@ bool Stage::isProblem()
 
 	return false;
 }
+
+StageObserver * Stage::popObs()
+{
+    if (stageObservers.size() == 0)
+        return nullptr;
+    else 
+    {
+        return stageObservers[0];
+    }
+}

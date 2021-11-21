@@ -20,6 +20,8 @@ using namespace std;
  *  @date      November 2021
  */
 
+class RState; class Stage;  
+
 class Rocket
 {
 private:

@@ -33,11 +33,20 @@ Rocket * Rocket::getRocket() { return this; }
 
 Rocket::~Rocket()
 {
-    // don't delete this->target as it is a global thing which should be delted in main
-
     delete this->capsule;
+    this->capsule = nullptr;
     delete this->strategy;
+    this->strategy = nullptr;
 
+    if (stages.size() > 0)
+        while(stages[0]->popObs())
+        {
+            StageObserver * temp = stages[0]->popObs();
+            for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
+                (*itr)->detach(temp);
+            delete temp;
+        }
+        
     for (std::vector<Stage*>::iterator itr = this->stages.begin(); itr != this->stages.end(); itr++)
         delete (*itr);
 }

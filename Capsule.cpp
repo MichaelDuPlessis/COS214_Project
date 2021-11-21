@@ -12,6 +12,8 @@ Capsule::~Capsule()
         delete it->current();
 
     delete it;
+    it = nullptr;
+    satStorage.clear();
 }
 
 // should never be called in this class
@@ -20,7 +22,7 @@ bool Capsule::addCrew(Crew* crew)
     return false;
 }
 
-void Capsule::unloadCrew() 
+void Capsule::unloadCrew()
 {
     std::cout << "This capsule has no crew to unload.\n";
 }

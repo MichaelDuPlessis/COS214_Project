@@ -67,6 +67,13 @@ public:
 	void detach(StageObserver *obs);
 
 	/**
+	 * @brief returns first element in stage
+	 * 
+	 * @return StageObserver* 
+	 */
+	StageObserver * popObs();
+
+	/**
 	 * @brief Add specific observer to the observerList of this stage (Subject)
 	 * 
 	 * @param[in]	obs The observer that must be added  

@@ -53,9 +53,9 @@ int main()
 
     // greeting text for the user
     cout << "Welcome to the SpaceX Launch Simulation\n";
-    cout << "You will be required to make as many test rockets as you want to launc\n";
+    cout << "You will be required to make as many test rockets as you want to launch\n";
+    cout << "Type 'end' at any point to end the construction of Rockets\n\n";
 
-    cout << "Type 'done' at any point to end the construction of Rockets\n\n";
     // need to check done after eveery function call
     while (!done)
     {
@@ -97,6 +97,7 @@ int main()
             if (done)
             {
                 delete rocket;
+                rocket = nullptr;
                 continue;
             }
 
@@ -107,6 +108,7 @@ int main()
                 if (done)
                 {
                     delete rocket;
+                    rocket = nullptr;
                     continue;
                 }
             }
@@ -116,6 +118,7 @@ int main()
             if (done)
             {
                 delete rocket;
+                rocket = nullptr;
                 continue;
             }
         }
