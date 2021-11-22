@@ -40,10 +40,11 @@ namespace
         {    
 
             Rocket* r = rf->buildFalcon9("TestRocket9", true);
-            EXPECT_TRUE(typeid(*rf)==typeid(Rocket));
+            EXPECT_TRUE(typeid(*r)==typeid(Rocket));
             Stage* s = r->getStages().at(0);
 
             EXPECT_EQ(1, s->getNumThrusters());
+            delete s;
             delete rf;
 
         }
@@ -68,6 +69,7 @@ namespace
             Stage* s = r->getStages().at(0);
 
             EXPECT_EQ(3, s->getNumThrusters());
+            delete s;
             delete rf;
 
         }
