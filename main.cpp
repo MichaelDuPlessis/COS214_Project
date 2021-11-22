@@ -8,6 +8,7 @@
 #include "launch.h"
 #include "land.h"
 #include "MasterNetwork.h"
+#include "missionControl.h"
 
 #include "unit_tests/crew_dragon_unittest.cpp"
 #include "unit_tests/rocket_factory_unittest.cpp"
@@ -19,13 +20,7 @@
 
 using namespace std;
 
-
-int main(int argc, char **argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-/*// building rocket
+// building rocket
 // creating rocket
 Rocket* getRocket(string name, bool crew);
 // asks for name of rocket
@@ -50,6 +45,9 @@ void stageWarn(Rocket* rocket);
 // helpers
 bool checkIfNum(string &str);
 
+// simulation
+void runSimulation();
+
 // errors
 void invalidInput();
     
@@ -59,7 +57,18 @@ bool done = false;
 // number of rockets created
 int numRockets = 0;
 
-int main()
+int main(int argc, char **argv)
+{
+    // uncomment for google tests
+    // testing::InitGoogleTest(&argc, argv);
+    // return RUN_ALL_TESTS();
+
+    // uncomment to run simulation
+    runSimulation();
+    return 0;
+}
+
+void runSimulation()
 {
     // caretaker
     Hanger hanger;
@@ -155,19 +164,23 @@ int main()
     // launchind landing the rockets
     cout << "======Launching Rockets======\n\n";
 
-    Launch launch;
-    Land land;
     for (int i = 0; i < numRockets; i++)
     {
         Rocket* rocket = new Rocket(hanger.getMemento());
         if (rocket->canLaunch())
         {
             cout << "======" << rocket->getName() << " is launching======\n\n";
-            launch.setRocket(rocket);
-            launch.launch();
-            land.setRocket(rocket);
-            land.land();
+            Launch* launch = new Launch();
+            Land* land = new Land();
+            launch->setRocket(rocket);
+            land->setRocket(rocket);
+
+            MissionControl* missionControl = new MissionControl(launch, land);
+            missionControl->launch();
+            missionControl->land();
             cout << "\n======launching finished======\n\n";
+
+            delete missionControl;
         }
         else
         {
@@ -179,8 +192,6 @@ int main()
 
     // communicating globally
     MasterNetwork::instance()->communicate();
-
-    return 0;
 }
 
 void stageWarn(Rocket* rocket)
@@ -475,4 +486,3 @@ void invalidInput(){
 bool checkIfNum(string &str){
     return str.find_first_not_of("0123456789") == std::string::npos;
 }
-*/
