@@ -111,3 +111,7 @@ StageObserver * Stage::popObs()
         return stageObservers[0];
     }
 }
+
+int Stage::getNumThrusters() {
+	return thrusters.size();
+}

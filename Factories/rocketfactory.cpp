@@ -15,9 +15,13 @@ RocketFactory::RocketFactory()
 
 RocketFactory::RocketFactory(StageFactory *sf, C_CapsuleFactory *cd, CD_CapsuleFactory *d){
     // cout << "Rocket Facotry Created" << endl;
-    StgFact = sf;
-    CDFact = cd;
-    CFact = d;
+
+    if(sf==NULL) StgFact = new StageFactory(new ThrusterFactory());
+    else StgFact = sf;
+    if(cd==NULL) CDFact = new CD_CapsuleFactory();
+    else CDFact = cd;
+    if(d==NULL) CFact = new C_CapsuleFactory();
+    else CFact = d;
     
 }
 //====================================================================================================================//
@@ -71,10 +75,12 @@ Capsule* RocketFactory::builldCapsule(bool crewdragon)
     return c;
 }
 
-RocketFactory::~RocketFactory(){    
-    delete StgFact;
-    delete CDFact;
-    delete CFact ;
+
+RocketFactory::~RocketFactory(){   
+
+    if(StgFact != NULL) delete StgFact;
+    if(CDFact != NULL) delete CDFact;
+    if(CFact != NULL) delete CFact ;
 
     // cout << "Rocket Facotry Destroyed" << endl;
 }

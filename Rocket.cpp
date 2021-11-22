@@ -144,3 +144,6 @@ void Rocket::replaceCapsule(Capsule* cap)
 
     this->capsule = cap;
 }
+vector<Stage*> Rocket::getStages(){
+    return stages;
+}

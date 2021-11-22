@@ -220,5 +220,12 @@ public:
      * @param cap 
      */
     void replaceCapsule(Capsule* cap);
+
+    /**
+     * @brief access to the rockets stages
+     * 
+     * @return vector<Stage*> 
+     */
+    vector<Stage*> getStages();
 };
 #endif

@@ -109,6 +109,8 @@ public:
 	 */
 	bool isProblem();
 
+	int getNumThrusters();
+
 private:
 	/**
 	 * @brief Thruster object
