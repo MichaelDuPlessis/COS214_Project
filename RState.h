@@ -4,7 +4,7 @@
 #include "Rocket.h"
 using namespace std;
 
-class Capsule;  class Stage; class Network;
+class Capsule; class Stage; class Network;
 
 /**
  * @brief RState Class
