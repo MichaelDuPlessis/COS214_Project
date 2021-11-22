@@ -44,3 +44,7 @@ void FalconCore::stop()
     for (std::vector<Thruster*>::iterator itr = this->thrusters.begin(); itr != this->thrusters.end(); itr++)
         (*itr)->stop();
 }
+
+std::vector<Thruster*> FalconCore::getThursters(){
+    return thrusters;
+}

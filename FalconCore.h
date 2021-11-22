@@ -58,6 +58,12 @@ class FalconCore : public Thruster
          */
         bool removeThruster(Thruster* thruster);
 
+        /**
+         * @brief gets the thruster 
+ 
+         * @return list of engines attached to core
+         */
+         std::vector<Thruster*> getThursters();
     private:
         /**
          * @brief a vector of thrusters for the falcon core
