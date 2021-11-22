@@ -64,7 +64,7 @@ namespace
         try
         {    
 
-            Rocket* r = rf->buildFalcon9("TestRocketHeavy", false);
+            Rocket* r = rf->buildFalconHeavy("TestRocketHeavy", false);
             EXPECT_TRUE(typeid(*r)==typeid(Rocket));
             Stage* s = r->getStages().at(0);
 
